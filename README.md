@@ -52,6 +52,7 @@ Guides:
 - roadmap: [FIGMA-TO-CODE-ROADMAP.md](C:\Users\chanki\workspace\creative-ui\chanchan2\FIGMA-TO-CODE-ROADMAP.md)
 - operations: [DEPLOYMENT-AND-OPERATIONS.md](C:\Users\chanki\workspace\creative-ui\chanchan2\DEPLOYMENT-AND-OPERATIONS.md)
 - operations (Korean): [PUBLISHING-AND-OPERATIONS.ko.md](C:\Users\chanki\workspace\creative-ui\chanchan2\PUBLISHING-AND-OPERATIONS.ko.md)
+- publish blocker handoff (Korean): [PUBLISH-BLOCKER-HANDOFF.ko.md](C:\Users\chanki\workspace\creative-ui\chanchan2\PUBLISH-BLOCKER-HANDOFF.ko.md)
 
 ## Token Flow
 
