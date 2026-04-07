@@ -1,0 +1,22 @@
+{
+  "name": "chanchan2-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "tokens:sync": "npm run sync --workspace @chanchan2/tokens",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish",
+    "build": "npm run build --workspace @chanchan2/tokens && npm run build --workspace @chanchan2/ui && npm run build --workspace @chanchan2/docs",
+    "typecheck": "npm run typecheck --workspace @chanchan2/tokens && npm run typecheck --workspace @chanchan2/ui && npm run typecheck --workspace @chanchan2/docs",
+    "dev": "npm run dev --workspace @chanchan2/docs",
+    "clean": "npm run clean --workspace @chanchan2/tokens && npm run clean --workspace @chanchan2/ui && npm run clean --workspace @chanchan2/docs"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6"
+  }
+}

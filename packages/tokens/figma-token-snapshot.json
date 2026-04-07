@@ -1,0 +1,140 @@
+{
+  "source": {
+    "fileKey": "7Nd8Ml5yOREhJjdCDKggf4",
+    "collection": "Tokens"
+  },
+  "semanticColors": {
+    "Background/Body": {
+      "default": "#ffffff",
+      "default-dark": "#0f172a",
+      "harvest": "#ffffff",
+      "harvest-dark": "#0f172a",
+      "retro": "#ffffff",
+      "retro-dark": "#0f172a"
+    },
+    "Background/Secondary Color": {
+      "default": "#f8fafc",
+      "default-dark": "#1e293b",
+      "harvest": "#f8fafc",
+      "harvest-dark": "#1e293b",
+      "retro": "#f8fafc",
+      "retro-dark": "#1e293b"
+    },
+    "Border/Border Color": {
+      "default": "#e5e7eb",
+      "default-dark": "#374151",
+      "harvest": "#e5e7eb",
+      "harvest-dark": "#374151",
+      "retro": "#e5e7eb",
+      "retro-dark": "#374151"
+    },
+    "Text/Title Color": {
+      "default": "#1f2937",
+      "default-dark": "#e5e7eb",
+      "harvest": "#1f2937",
+      "harvest-dark": "#e5e7eb",
+      "retro": "#1f2937",
+      "retro-dark": "#e5e7eb"
+    },
+    "Text/Secondary Text Color": {
+      "default": "#6b7280",
+      "default-dark": "#9ca3af",
+      "harvest": "#6b7280",
+      "harvest-dark": "#9ca3af",
+      "retro": "#6b7280",
+      "retro-dark": "#9ca3af"
+    },
+    "Text/Success Color": {
+      "default": "#14b8a6",
+      "default-dark": "#14b8a6",
+      "harvest": "#14b8a6",
+      "harvest-dark": "#14b8a6",
+      "retro": "#14b8a6",
+      "retro-dark": "#14b8a6"
+    },
+    "Text/Invalid Color": {
+      "default": "#ef4444",
+      "default-dark": "#ef4444",
+      "harvest": "#ef4444",
+      "harvest-dark": "#ef4444",
+      "retro": "#ef4444",
+      "retro-dark": "#ef4444"
+    }
+  },
+  "accentScales": {
+    "Theme/Accent/Primary 1": {
+      "default": "#eff6ff",
+      "default-dark": "#3b82f61a",
+      "harvest": "#fffbeb",
+      "harvest-dark": "#f59e0b1a",
+      "retro": "#fdf4ff",
+      "retro-dark": "#d946ef1a"
+    },
+    "Theme/Accent/Primary 2": {
+      "default": "#dbeafe",
+      "default-dark": "#3b82f61a",
+      "harvest": "#fef3c7",
+      "harvest-dark": "#f59e0b1a",
+      "retro": "#fae8ff",
+      "retro-dark": "#d946ef1a"
+    },
+    "Theme/Accent/Primary 7": {
+      "default": "#1e40af",
+      "default-dark": "#60a5fa",
+      "harvest": "#92400e",
+      "harvest-dark": "#fbbf24",
+      "retro": "#86198f",
+      "retro-dark": "#e879f9"
+    }
+  },
+  "radii": {
+    "Border Radius/XS": {
+      "default": 2,
+      "default-dark": 2,
+      "harvest": 2,
+      "harvest-dark": 2,
+      "retro": 0,
+      "retro-dark": 0
+    },
+    "Border Radius/SM": {
+      "default": 4,
+      "default-dark": 4,
+      "harvest": 4,
+      "harvest-dark": 4,
+      "retro": 0,
+      "retro-dark": 0
+    },
+    "Border Radius/MD": {
+      "default": 6,
+      "default-dark": 6,
+      "harvest": 6,
+      "harvest-dark": 6,
+      "retro": 0,
+      "retro-dark": 0
+    },
+    "Border Radius/LG": {
+      "default": 8,
+      "default-dark": 8,
+      "harvest": 8,
+      "harvest-dark": 8,
+      "retro": 0,
+      "retro-dark": 0
+    },
+    "Border Radius/XL": {
+      "default": 12,
+      "default-dark": 12,
+      "harvest": 12,
+      "harvest-dark": 12,
+      "retro": 0,
+      "retro-dark": 0
+    },
+    "Border Radius/Full": {
+      "default": 999,
+      "default-dark": 999,
+      "harvest": 999,
+      "harvest-dark": 999,
+      "retro": 0,
+      "retro-dark": 0
+    }
+  }
+}

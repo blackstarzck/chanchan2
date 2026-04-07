@@ -1,0 +1,44 @@
+{
+  "name": "@chanchan2/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "./theme.css"
+  ],
+  "files": [
+    "dist",
+    "theme.css",
+    "figma-token-snapshot.json"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./theme.css": "./theme.css",
+    "./tailwind-preset": {
+      "types": "./dist/tailwind-preset.d.ts",
+      "import": "./dist/tailwind-preset.js",
+      "require": "./dist/tailwind-preset.cjs"
+    },
+    "./figma-token-snapshot.json": "./figma-token-snapshot.json"
+  },
+  "scripts": {
+    "sync": "node ./scripts/sync-tokens.mjs",
+    "build": "npm run sync && tsup src/index.ts src/tailwind-preset.ts --format esm,cjs --dts --out-dir dist",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.8.3"
+  }
+}

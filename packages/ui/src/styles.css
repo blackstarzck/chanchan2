@@ -1,0 +1,22 @@
+@import "@chanchan2/tokens/theme.css";
+@import "tailwindcss";
+@source "./**/*.{ts,tsx}";
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--cc-font-sans);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--cc-font-sans);
+  }
+
+  [data-theme$="dark"] {
+    color-scheme: dark;
+  }
+}
