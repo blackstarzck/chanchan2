@@ -1,7 +1,7 @@
 {
   "name": "@chanchan2/docs",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,8 +10,8 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@chanchan2/tokens": "0.1.0",
-    "@chanchan2/ui": "0.1.0",
+    "@chanchan2/tokens": "0.2.0",
+    "@chanchan2/ui": "0.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
