@@ -1,4 +1,4 @@
-# @chanchan2/tokens
+# @blackstarzck/tokens
 
 ## 0.2.0
 

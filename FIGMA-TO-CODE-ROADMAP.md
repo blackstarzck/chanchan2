@@ -1,6 +1,6 @@
 # Figma To Code Roadmap
 
-This document maps the Preline Figma pages to the `@chanchan2/ui` package roadmap.
+This document maps the Preline Figma pages to the `@blackstarzck/ui` package roadmap.
 
 Source Figma file:
 

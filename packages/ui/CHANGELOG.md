@@ -1,4 +1,4 @@
-# @chanchan2/ui
+# @blackstarzck/ui
 
 ## 0.2.0
 
@@ -10,4 +10,4 @@
 ### Patch Changes
 
 - Updated dependencies [70b45b7]
-  - @chanchan2/tokens@0.2.0
+  - @blackstarzck/tokens@0.2.0

@@ -4,12 +4,12 @@
 
 대상 패키지:
 
-- `@chanchan2/tokens`
-- `@chanchan2/ui`
+- `@blackstarzck/tokens`
+- `@blackstarzck/ui`
 
 내부 앱:
 
-- `@chanchan2/docs`
+- `@blackstarzck/docs`
 
 ## 가장 자주 쓰는 흐름
 
@@ -212,8 +212,8 @@ npm run version-packages
 수동 배포가 꼭 필요할 때만:
 
 ```bash
-npm publish --workspace @chanchan2/tokens --access public
-npm publish --workspace @chanchan2/ui --access public
+npm publish --workspace @blackstarzck/tokens --access public
+npm publish --workspace @blackstarzck/ui --access public
 ```
 
 보통은 수동 배포보다 GitHub Actions 릴리스를 사용하는 편이 좋습니다.

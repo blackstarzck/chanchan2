@@ -12,19 +12,19 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@chanchan2/ui/styles.css",
+        find: "@blackstarzck/ui/styles.css",
         replacement: path.resolve(rootDir, "../../packages/ui/src/styles.css")
       },
       {
-        find: "@chanchan2/tokens/theme.css",
+        find: "@blackstarzck/tokens/theme.css",
         replacement: path.resolve(rootDir, "../../packages/tokens/theme.css")
       },
       {
-        find: "@chanchan2/ui",
+        find: "@blackstarzck/ui",
         replacement: path.resolve(rootDir, "../../packages/ui/src/index.ts")
       },
       {
-        find: "@chanchan2/tokens",
+        find: "@blackstarzck/tokens",
         replacement: path.resolve(rootDir, "../../packages/tokens/src/index.ts")
       }
     ]

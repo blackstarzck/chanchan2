@@ -6,12 +6,12 @@ This document explains how to maintain, version, and publish the `chanchan2` pac
 
 The workspace currently publishes two packages:
 
-- `@chanchan2/tokens`
-- `@chanchan2/ui`
+- `@blackstarzck/tokens`
+- `@blackstarzck/ui`
 
 The docs app is internal:
 
-- `@chanchan2/docs`
+- `@blackstarzck/docs`
 
 ## Day-To-Day Workflow
 
@@ -192,8 +192,8 @@ npm run version-packages
 If you ever need a local manual publish:
 
 ```bash
-npm publish --workspace @chanchan2/tokens --access public
-npm publish --workspace @chanchan2/ui --access public
+npm publish --workspace @blackstarzck/tokens --access public
+npm publish --workspace @blackstarzck/ui --access public
 ```
 
 Normally, CI should handle publish once `main` is configured correctly.

@@ -18,10 +18,10 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@chanchan2/tokens": [
+      "@blackstarzck/tokens": [
         "packages/tokens/src/index.ts"
       ],
-      "@chanchan2/ui": [
+      "@blackstarzck/ui": [
         "packages/ui/src/index.ts"
       ]
     }

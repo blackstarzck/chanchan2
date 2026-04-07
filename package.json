@@ -7,14 +7,14 @@
     "apps/*"
   ],
   "scripts": {
-    "tokens:sync": "npm run sync --workspace @chanchan2/tokens",
+    "tokens:sync": "npm run sync --workspace @blackstarzck/tokens",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "npm run build && changeset publish",
-    "build": "npm run build --workspace @chanchan2/tokens && npm run build --workspace @chanchan2/ui && npm run build --workspace @chanchan2/docs",
-    "typecheck": "npm run typecheck --workspace @chanchan2/tokens && npm run typecheck --workspace @chanchan2/ui && npm run typecheck --workspace @chanchan2/docs",
-    "dev": "npm run dev --workspace @chanchan2/docs",
-    "clean": "npm run clean --workspace @chanchan2/tokens && npm run clean --workspace @chanchan2/ui && npm run clean --workspace @chanchan2/docs"
+    "build": "npm run build --workspace @blackstarzck/tokens && npm run build --workspace @blackstarzck/ui && npm run build --workspace @blackstarzck/docs",
+    "typecheck": "npm run typecheck --workspace @blackstarzck/tokens && npm run typecheck --workspace @blackstarzck/ui && npm run typecheck --workspace @blackstarzck/docs",
+    "dev": "npm run dev --workspace @blackstarzck/docs",
+    "clean": "npm run clean --workspace @blackstarzck/tokens && npm run clean --workspace @blackstarzck/ui && npm run clean --workspace @blackstarzck/docs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.6"

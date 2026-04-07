@@ -43,8 +43,8 @@ Source of truth:
 Replace the npm scope if needed, then publish the packages independently:
 
 ```bash
-npm publish --workspace @chanchan2/tokens --access public
-npm publish --workspace @chanchan2/ui --access public
+npm publish --workspace @blackstarzck/tokens --access public
+npm publish --workspace @blackstarzck/ui --access public
 ```
 
 Guides:

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 
-import { getThemeTokens, themeCatalog, themeNames, type ThemeName } from "@chanchan2/tokens";
+import { getThemeTokens, themeCatalog, themeNames, type ThemeName } from "@blackstarzck/tokens";
 import {
   Accordion,
   AccordionContent,
@@ -135,7 +135,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
   UploadList
-} from "@chanchan2/ui";
+} from "@blackstarzck/ui";
 
 const sampleSwatches = [
   "background",
@@ -347,7 +347,7 @@ export default function App() {
               </CardHeader>
               <CardContent className="grid gap-6">
                 <div className="grid gap-3 md:grid-cols-2">
-                  <Input defaultValue="design-system@chanchan2.dev" />
+                  <Input defaultValue="design-system@blackstarzck.dev" />
                   <Select value={plan} onValueChange={setPlan}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select package tier" />
