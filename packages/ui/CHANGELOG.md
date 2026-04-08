@@ -1,5 +1,13 @@
 # @blackstarzck/ui
 
+## 0.2.1
+
+### Patch Changes
+
+- 89a18cc: Add package-level README files and npm metadata so each package page links back to the source repository and shows package-specific usage guidance.
+- Updated dependencies [89a18cc]
+  - @blackstarzck/tokens@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
