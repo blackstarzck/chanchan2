@@ -1,6 +1,6 @@
 {
   "name": "@blackstarzck/tokens",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Figma-derived design tokens, theme metadata, and Tailwind preset for Chanchan2 UI.",
   "type": "module",
   "publishConfig": {

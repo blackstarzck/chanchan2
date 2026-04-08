@@ -1,7 +1,7 @@
 {
   "name": "@blackstarzck/docs",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,8 +10,8 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@blackstarzck/tokens": "0.2.0",
-    "@blackstarzck/ui": "0.2.0",
+    "@blackstarzck/tokens": "0.2.1",
+    "@blackstarzck/ui": "0.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
