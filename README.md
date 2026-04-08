@@ -3,7 +3,7 @@
 `chanchan2` is a starter workspace for shipping a Figma-backed UI library with:
 
 - Figma-derived theme tokens
-- `shadcn`-style React primitives
+- Radix-based React primitives
 - Tailwind-powered component styling
 - npm-ready package exports
 
