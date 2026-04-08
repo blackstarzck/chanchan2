@@ -1,6 +1,7 @@
 {
   "name": "@blackstarzck/ui",
   "version": "0.2.0",
+  "description": "Publishable React UI primitives and compiled CSS built on top of @blackstarzck/tokens.",
   "type": "module",
   "publishConfig": {
     "access": "public"
@@ -9,8 +10,25 @@
     "./dist/styles.css"
   ],
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "tailwind",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackstarzck/chanchan2.git",
+    "directory": "packages/ui"
+  },
+  "homepage": "https://github.com/blackstarzck/chanchan2/tree/main/packages/ui#readme",
+  "bugs": {
+    "url": "https://github.com/blackstarzck/chanchan2/issues"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

@@ -1,6 +1,7 @@
 {
   "name": "@blackstarzck/tokens",
   "version": "0.2.0",
+  "description": "Figma-derived design tokens, theme metadata, and Tailwind preset for Chanchan2 UI.",
   "type": "module",
   "publishConfig": {
     "access": "public"
@@ -10,9 +11,26 @@
   ],
   "files": [
     "dist",
+    "README.md",
     "theme.css",
     "figma-token-snapshot.json"
   ],
+  "keywords": [
+    "design-tokens",
+    "figma",
+    "tailwind",
+    "theme",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackstarzck/chanchan2.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/blackstarzck/chanchan2/tree/main/packages/tokens#readme",
+  "bugs": {
+    "url": "https://github.com/blackstarzck/chanchan2/issues"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
