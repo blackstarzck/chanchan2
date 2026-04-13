@@ -177,13 +177,13 @@ export default function App() {
         <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-6 py-8 lg:px-10">
           <Navbar>
             <NavbarBrand>
-              <div className="inline-flex size-10 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                C2
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">npm-ready UI system</p>
-                <h1 className="text-xl font-semibold">Chanchan2 UI</h1>
-              </div>
+              <img
+                src="/full-logo.png"
+                alt="Chanchan2 UI"
+                width={95}
+                height={76}
+                className="block h-[76px] w-[95px]"
+              />
             </NavbarBrand>
             <NavbarContent className="justify-center">
               <NavbarLink active href="#overview">
