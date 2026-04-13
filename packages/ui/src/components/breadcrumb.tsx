@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ChevronRight, MoreHorizontal } from "lucide-react";
+import { ChevronRight, MoreHorizontal, Slash } from "lucide-react";
 
 import { cn } from "../lib/cn";
 
@@ -10,13 +10,17 @@ const Breadcrumb = React.forwardRef<HTMLElement, React.ComponentProps<"nav">>(({
 Breadcrumb.displayName = "Breadcrumb";
 
 const BreadcrumbList = React.forwardRef<HTMLOListElement, React.ComponentProps<"ol">>(({ className, ...props }, ref) => (
-  <ol ref={ref} className={cn("flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground", className)} {...props} />
+  <ol
+    ref={ref}
+    className={cn("flex flex-wrap items-center gap-4 break-words text-sm font-medium tracking-[0.07px] text-muted-foreground", className)}
+    {...props}
+  />
 ));
 
 BreadcrumbList.displayName = "BreadcrumbList";
 
 const BreadcrumbItem = React.forwardRef<HTMLLIElement, React.ComponentProps<"li">>(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("inline-flex items-center gap-1.5", className)} {...props} />
+  <li ref={ref} className={cn("inline-flex items-center gap-2.5", className)} {...props} />
 ));
 
 BreadcrumbItem.displayName = "BreadcrumbItem";
@@ -33,9 +37,14 @@ const BreadcrumbPage = React.forwardRef<HTMLSpanElement, React.ComponentProps<"s
 
 BreadcrumbPage.displayName = "BreadcrumbPage";
 
-const BreadcrumbSeparator = ({ children, className, ...props }: React.ComponentProps<"li">) => (
-  <li role="presentation" aria-hidden="true" className={cn("[&>svg]:size-3.5", className)} {...props}>
-    {children ?? <ChevronRight />}
+const BreadcrumbSeparator = ({
+  children,
+  className,
+  variant = "slash",
+  ...props
+}: React.ComponentProps<"li"> & { variant?: "slash" | "chevron" }) => (
+  <li role="presentation" aria-hidden="true" className={cn("text-muted-foreground [&>svg]:size-3", className)} {...props}>
+    {children ?? (variant === "chevron" ? <ChevronRight /> : <Slash />)}
   </li>
 );
 

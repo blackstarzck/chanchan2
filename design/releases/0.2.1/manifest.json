@@ -1,0 +1,32 @@
+{
+  "designVersion": "0.2.1",
+  "figmaFileKey": "7Nd8Ml5yOREhJjdCDKggf4",
+  "figmaLibraryVersion": "Tokens",
+  "releasePageId": null,
+  "releasePageName": null,
+  "exportedAt": null,
+  "sourcePlugin": {
+    "name": "Design System Probe",
+    "version": "0.1.0"
+  },
+  "baseVersion": null,
+  "changedTokens": [
+    "*"
+  ],
+  "changedThemes": [
+    "*"
+  ],
+  "changedComponents": [
+    "*"
+  ],
+  "changedSamples": [
+    "*"
+  ],
+  "approvedBy": [],
+  "packageVersions": {
+    "tokens": "0.2.1",
+    "ui": "0.2.1"
+  },
+  "createdAt": "2026-04-09T02:41:03.764Z",
+  "notes": ""
+}

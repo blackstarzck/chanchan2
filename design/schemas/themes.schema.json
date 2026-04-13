@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blackstarzck.github.io/chanchan2/design/schemas/themes.schema.json",
+  "title": "Design Handoff Themes",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "figma",
+    "themes"
+  ],
+  "properties": {
+    "figma": {
+      "$ref": "#/$defs/figmaContext"
+    },
+    "themes": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/themeDescriptor"
+      }
+    }
+  },
+  "$defs": {
+    "figmaContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fileKey",
+        "releasePageId",
+        "releasePageName",
+        "exportedAt",
+        "sourcePlugin"
+      ],
+      "properties": {
+        "fileKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exportedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sourcePlugin": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "themeDescriptor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "family",
+        "familyKey",
+        "mode"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "family": {
+          "type": "string"
+        },
+        "familyKey": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "light",
+            "dark"
+          ]
+        },
+        "figmaCollectionId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "figmaCollectionKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "figmaModeId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

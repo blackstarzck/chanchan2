@@ -6,6 +6,7 @@ import { cn } from "../lib/cn";
 export interface RatingProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> {
   value?: number;
   defaultValue?: number;
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   max?: number;
   readOnly?: boolean;
   onValueChange?: (value: number) => void;
@@ -15,6 +16,7 @@ function Rating({
   className,
   value,
   defaultValue = 0,
+  icon: Icon = Star,
   max = 5,
   readOnly = false,
   onValueChange,
@@ -34,7 +36,7 @@ function Rating({
   };
 
   return (
-    <div className={cn("inline-flex items-center gap-1", className)} {...props}>
+    <div className={cn("inline-flex items-center", className)} {...props}>
       {Array.from({ length: max }, (_, index) => {
         const isActive = index < currentValue;
 
@@ -44,13 +46,13 @@ function Rating({
             type="button"
             disabled={readOnly}
             aria-label={`Rate ${index + 1} out of ${max}`}
-            className="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-primary disabled:pointer-events-none"
+            className="inline-flex size-5 items-center justify-center text-slate-300 transition-colors hover:text-primary disabled:pointer-events-none"
             onClick={() => setValue(index + 1)}
           >
-            <Star
+            <Icon
               className={cn(
-                "size-4",
-                isActive ? "fill-current text-primary" : "text-muted-foreground"
+                "size-5",
+                isActive ? "fill-current text-primary" : "text-slate-300"
               )}
             />
           </button>

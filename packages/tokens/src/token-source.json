@@ -4,31 +4,37 @@
     "default": {
       "label": "Default",
       "family": "Default",
+      "familyKey": "default",
       "mode": "light"
     },
     "default-dark": {
       "label": "Default Dark",
       "family": "Default",
+      "familyKey": "default",
       "mode": "dark"
     },
     "harvest": {
       "label": "Harvest",
       "family": "Harvest",
+      "familyKey": "harvest",
       "mode": "light"
     },
     "harvest-dark": {
       "label": "Harvest Dark",
       "family": "Harvest",
+      "familyKey": "harvest",
       "mode": "dark"
     },
     "retro": {
       "label": "Retro",
       "family": "Retro",
+      "familyKey": "retro",
       "mode": "light"
     },
     "retro-dark": {
       "label": "Retro Dark",
       "family": "Retro",
+      "familyKey": "retro",
       "mode": "dark"
     }
   },

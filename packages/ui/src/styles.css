@@ -16,7 +16,8 @@
     font-family: var(--cc-font-sans);
   }
 
-  [data-theme$="dark"] {
+  [data-mode="dark"],
+  [data-theme].dark {
     color-scheme: dark;
   }
 }

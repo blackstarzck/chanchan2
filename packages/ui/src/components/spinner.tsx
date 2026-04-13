@@ -25,10 +25,24 @@ const spinnerVariants = cva("inline-block animate-spin rounded-full border-2 bor
 
 export interface SpinnerProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-    VariantProps<typeof spinnerVariants> {}
+    VariantProps<typeof spinnerVariants> {
+  label?: React.ReactNode;
+  wrapperClassName?: string;
+}
 
-function Spinner({ className, size, tone, ...props }: SpinnerProps) {
-  return <span aria-hidden className={cn(spinnerVariants({ size, tone }), className)} {...props} />;
+function Spinner({ className, label, size, tone, wrapperClassName, ...props }: SpinnerProps) {
+  const spinner = <span aria-hidden className={cn(spinnerVariants({ size, tone }), className)} {...props} />;
+
+  if (!label) {
+    return spinner;
+  }
+
+  return (
+    <span className={cn("inline-flex flex-col items-center justify-center gap-2", wrapperClassName)}>
+      {spinner}
+      <span className="text-base font-medium tracking-[0.08px] text-foreground">{label}</span>
+    </span>
+  );
 }
 
 export { Spinner };

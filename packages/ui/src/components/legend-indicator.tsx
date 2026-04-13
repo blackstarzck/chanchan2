@@ -47,4 +47,35 @@ function LegendPill({ className, indicatorClassName, tone, children, ...props }:
   );
 }
 
-export { LegendDot, LegendPill };
+export interface LegendIndicatorProps extends React.HTMLAttributes<HTMLDivElement> {
+  dottedClassName?: string;
+  label?: React.ReactNode;
+  stripedClassName?: string;
+  tone?: VariantProps<typeof legendToneVariants>["tone"];
+}
+
+function LegendIndicator({
+  className,
+  dottedClassName,
+  label,
+  stripedClassName,
+  tone,
+  ...props
+}: LegendIndicatorProps) {
+  return (
+    <div className={cn("inline-flex h-6 items-center gap-2.5 text-base font-medium tracking-[0.08px] text-foreground", className)} {...props}>
+      <span className={cn("inline-flex size-2 rounded-full", legendToneVariants({ tone }), dottedClassName)} />
+      <span className={cn("inline-flex h-1.5 w-3 rounded-[2px]", legendToneVariants({ tone }))} />
+      <span
+        className={cn("inline-flex h-1.5 w-3 rounded-[2px] bg-[length:6px_6px] bg-repeat-x", stripedClassName)}
+        style={{
+          backgroundImage:
+            "linear-gradient(115deg, currentColor 0 16%, transparent 17% 30%, currentColor 31% 45%, transparent 46% 60%, currentColor 61% 74%, transparent 75% 87%, currentColor 88%)"
+        }}
+      />
+      {label ? <span>{label}</span> : null}
+    </div>
+  );
+}
+
+export { LegendDot, LegendIndicator, LegendPill };

@@ -35,41 +35,6 @@
   --cc-radius-full: 999px;
 }
 
-[data-theme="default-dark"] {
-  color-scheme: dark;
-  --cc-background: #0f172a;
-  --cc-foreground: #e5e7eb;
-  --cc-card: #1e293b;
-  --cc-card-foreground: #e5e7eb;
-  --cc-popover: #1e293b;
-  --cc-popover-foreground: #e5e7eb;
-  --cc-secondary: #1e293b;
-  --cc-secondary-foreground: #e5e7eb;
-  --cc-muted: #1e293b;
-  --cc-muted-foreground: #9ca3af;
-  --cc-accent: #3b82f633;
-  --cc-accent-foreground: #60a5fa;
-  --cc-border: #374151;
-  --cc-input: #374151;
-  --cc-ring: #3b82f6;
-  --cc-primary: #60a5fa;
-  --cc-primary-foreground: #0f172a;
-  --cc-primary-soft: #3b82f61a;
-  --cc-primary-soft-foreground: #60a5fa;
-  --cc-destructive: #ef4444;
-  --cc-destructive-foreground: #ffffff;
-  --cc-success: #14b8a6;
-  --cc-success-foreground: #042f2e;
-  --cc-brand: #3b82f6;
-  --cc-overlay: #374151;
-  --cc-radius-xs: 2px;
-  --cc-radius-sm: 4px;
-  --cc-radius-md: 6px;
-  --cc-radius-lg: 8px;
-  --cc-radius-xl: 12px;
-  --cc-radius-full: 999px;
-}
-
 [data-theme="harvest"] {
   --cc-background: #ffffff;
   --cc-foreground: #1f2937;
@@ -96,41 +61,6 @@
   --cc-success-foreground: #ffffff;
   --cc-brand: #f59e0b;
   --cc-overlay: #9ca3af;
-  --cc-radius-xs: 2px;
-  --cc-radius-sm: 4px;
-  --cc-radius-md: 6px;
-  --cc-radius-lg: 8px;
-  --cc-radius-xl: 12px;
-  --cc-radius-full: 999px;
-}
-
-[data-theme="harvest-dark"] {
-  color-scheme: dark;
-  --cc-background: #0f172a;
-  --cc-foreground: #e5e7eb;
-  --cc-card: #1e293b;
-  --cc-card-foreground: #e5e7eb;
-  --cc-popover: #1e293b;
-  --cc-popover-foreground: #e5e7eb;
-  --cc-secondary: #1e293b;
-  --cc-secondary-foreground: #e5e7eb;
-  --cc-muted: #1e293b;
-  --cc-muted-foreground: #9ca3af;
-  --cc-accent: #f59e0b33;
-  --cc-accent-foreground: #fbbf24;
-  --cc-border: #374151;
-  --cc-input: #374151;
-  --cc-ring: #f59e0b;
-  --cc-primary: #fbbf24;
-  --cc-primary-foreground: #1f2937;
-  --cc-primary-soft: #f59e0b1a;
-  --cc-primary-soft-foreground: #fbbf24;
-  --cc-destructive: #ef4444;
-  --cc-destructive-foreground: #ffffff;
-  --cc-success: #14b8a6;
-  --cc-success-foreground: #042f2e;
-  --cc-brand: #f59e0b;
-  --cc-overlay: #374151;
   --cc-radius-xs: 2px;
   --cc-radius-sm: 4px;
   --cc-radius-md: 6px;
@@ -173,7 +103,82 @@
   --cc-radius-full: 0px;
 }
 
-[data-theme="retro-dark"] {
+:root[data-mode="dark"],
+:root.dark,
+[data-theme="default"][data-mode="dark"],
+[data-theme="default"].dark {
+  color-scheme: dark;
+  --cc-background: #0f172a;
+  --cc-foreground: #e5e7eb;
+  --cc-card: #1e293b;
+  --cc-card-foreground: #e5e7eb;
+  --cc-popover: #1e293b;
+  --cc-popover-foreground: #e5e7eb;
+  --cc-secondary: #1e293b;
+  --cc-secondary-foreground: #e5e7eb;
+  --cc-muted: #1e293b;
+  --cc-muted-foreground: #9ca3af;
+  --cc-accent: #3b82f633;
+  --cc-accent-foreground: #60a5fa;
+  --cc-border: #374151;
+  --cc-input: #374151;
+  --cc-ring: #3b82f6;
+  --cc-primary: #60a5fa;
+  --cc-primary-foreground: #0f172a;
+  --cc-primary-soft: #3b82f61a;
+  --cc-primary-soft-foreground: #60a5fa;
+  --cc-destructive: #ef4444;
+  --cc-destructive-foreground: #ffffff;
+  --cc-success: #14b8a6;
+  --cc-success-foreground: #042f2e;
+  --cc-brand: #3b82f6;
+  --cc-overlay: #374151;
+  --cc-radius-xs: 2px;
+  --cc-radius-sm: 4px;
+  --cc-radius-md: 6px;
+  --cc-radius-lg: 8px;
+  --cc-radius-xl: 12px;
+  --cc-radius-full: 999px;
+}
+
+[data-theme="harvest"][data-mode="dark"],
+[data-theme="harvest"].dark {
+  color-scheme: dark;
+  --cc-background: #0f172a;
+  --cc-foreground: #e5e7eb;
+  --cc-card: #1e293b;
+  --cc-card-foreground: #e5e7eb;
+  --cc-popover: #1e293b;
+  --cc-popover-foreground: #e5e7eb;
+  --cc-secondary: #1e293b;
+  --cc-secondary-foreground: #e5e7eb;
+  --cc-muted: #1e293b;
+  --cc-muted-foreground: #9ca3af;
+  --cc-accent: #f59e0b33;
+  --cc-accent-foreground: #fbbf24;
+  --cc-border: #374151;
+  --cc-input: #374151;
+  --cc-ring: #f59e0b;
+  --cc-primary: #fbbf24;
+  --cc-primary-foreground: #1f2937;
+  --cc-primary-soft: #f59e0b1a;
+  --cc-primary-soft-foreground: #fbbf24;
+  --cc-destructive: #ef4444;
+  --cc-destructive-foreground: #ffffff;
+  --cc-success: #14b8a6;
+  --cc-success-foreground: #042f2e;
+  --cc-brand: #f59e0b;
+  --cc-overlay: #374151;
+  --cc-radius-xs: 2px;
+  --cc-radius-sm: 4px;
+  --cc-radius-md: 6px;
+  --cc-radius-lg: 8px;
+  --cc-radius-xl: 12px;
+  --cc-radius-full: 999px;
+}
+
+[data-theme="retro"][data-mode="dark"],
+[data-theme="retro"].dark {
   color-scheme: dark;
   --cc-background: #0f172a;
   --cc-foreground: #e5e7eb;

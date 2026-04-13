@@ -2,7 +2,7 @@ import * as React from "react";
 import { Eye, EyeOff } from "lucide-react";
 
 import { cn } from "../lib/cn";
-import { Input, type InputProps } from "./input";
+import { Input, type InputProps } from "./Input";
 
 type PasswordStrength = {
   label: "Very weak" | "Weak" | "Fair" | "Good" | "Strong";

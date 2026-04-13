@@ -1,0 +1,48 @@
+:root {
+  --docs-brand-primary: #fe6a80;
+  --docs-brand-primary-hover: #f84f9c;
+  --docs-brand-primary-active: #d61f69;
+  --docs-brand-primary-soft: #fff1f4;
+  --docs-brand-primary-soft-foreground: #be185d;
+  --docs-brand-secondary: #fff6f8;
+  --docs-brand-secondary-foreground: #9f1239;
+  --docs-brand-accent: #ffe3ea;
+  --docs-brand-accent-foreground: #be185d;
+  --docs-brand-ring: #fe6a80;
+}
+
+[data-docs-shell-root] {
+  --cc-primary: var(--docs-brand-primary);
+  --cc-primary-foreground: #111827;
+  --cc-primary-soft: var(--docs-brand-primary-soft);
+  --cc-primary-soft-foreground: var(--docs-brand-primary-soft-foreground);
+  --cc-secondary: var(--docs-brand-secondary);
+  --cc-secondary-foreground: var(--docs-brand-secondary-foreground);
+  --cc-accent: var(--docs-brand-accent);
+  --cc-accent-foreground: var(--docs-brand-accent-foreground);
+  --cc-brand: var(--docs-brand-primary);
+  --cc-ring: var(--docs-brand-ring);
+}
+
+[data-docs-shell-root][data-mode="dark"] {
+  --docs-brand-primary: #ff8fa1;
+  --docs-brand-primary-hover: #ffb3c1;
+  --docs-brand-primary-active: #fe6a80;
+  --docs-brand-primary-soft: #fe6a8029;
+  --docs-brand-primary-soft-foreground: #ffb3c1;
+  --docs-brand-secondary: #35111f;
+  --docs-brand-secondary-foreground: #ffd6de;
+  --docs-brand-accent: #f84f9c33;
+  --docs-brand-accent-foreground: #ffb3c1;
+  --docs-brand-ring: #ff8fa1;
+  --cc-primary-foreground: #111827;
+}
+
+@theme inline {
+  --color-docs-brand-primary: var(--docs-brand-primary);
+  --color-docs-brand-primary-hover: var(--docs-brand-primary-hover);
+  --color-docs-brand-primary-active: var(--docs-brand-primary-active);
+  --color-docs-brand-primary-soft: var(--docs-brand-primary-soft);
+  --color-docs-brand-secondary: var(--docs-brand-secondary);
+  --color-docs-brand-secondary-foreground: var(--docs-brand-secondary-foreground);
+}

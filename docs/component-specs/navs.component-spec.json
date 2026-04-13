@@ -1,0 +1,107 @@
+{
+  "componentName": "Navs",
+  "componentSlug": "navs",
+  "figma": {
+    "fileKey": "7Nd8Ml5yOREhJjdCDKggf4",
+    "pageName": "Navs/Tabs",
+    "mainNodeId": "4434:140584",
+    "instanceNodeIds": [
+      "4547:108782",
+      "4436:92388",
+      "4436:92381",
+      "4436:92384",
+      "4547:110769"
+    ],
+    "frameExceptionNodeIds": [],
+    "notes": [
+      "Figma MCP token was expired during this pass, so the local inventory is the source of record.",
+      "The Navs/Tabs page mixes navigation-only links and panel tabs. Navs owns the link-based navigation patterns."
+    ]
+  },
+  "anatomy": {
+    "slots": ["root nav", "link", "optional icon", "optional badge", "indicator"],
+    "notes": [
+      "Pill, bordered, segment, horizontal, vertical, and filled examples are repeated Figma variants.",
+      "Panel switching stays in Tabs. URL-backed navigation stays in Navs."
+    ]
+  },
+  "props": [
+    {
+      "name": "variant",
+      "kind": "semantic",
+      "type": "'default' | 'bordered'",
+      "required": false,
+      "default": "'default'",
+      "source": "Navs/Tabs repeated variant families",
+      "description": "Switches between pill-style links and bordered tab-row links."
+    },
+    {
+      "name": "orientation",
+      "kind": "semantic",
+      "type": "'horizontal' | 'vertical'",
+      "required": false,
+      "default": "'horizontal'",
+      "source": "Direction=Horizontal/Vertical Figma variants",
+      "description": "Changes the root nav direction."
+    },
+    {
+      "name": "fill",
+      "kind": "semantic",
+      "type": "'fit' | 'equal'",
+      "required": false,
+      "default": "'fit'",
+      "source": "Fill=None/Filled Figma variants",
+      "description": "Controls whether links hug content or distribute evenly."
+    },
+    {
+      "name": "active",
+      "kind": "state",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "source": "_nav-active-link",
+      "description": "Marks the current link."
+    },
+    {
+      "name": "disabled",
+      "kind": "state",
+      "type": "boolean",
+      "required": false,
+      "default": "false",
+      "source": "_nav-disabled-link",
+      "description": "Disables pointer and keyboard navigation for a link."
+    }
+  ],
+  "examples": [
+    {
+      "id": "basic",
+      "title": "Basic",
+      "kind": "instance",
+      "sourceNodeId": "4547:108782",
+      "notes": ["Base horizontal navigation."]
+    },
+    {
+      "id": "bordered",
+      "title": "Bordered",
+      "kind": "instance",
+      "sourceNodeId": "4436:92388",
+      "notes": ["Underline-style navigation row."]
+    },
+    {
+      "id": "vertical",
+      "title": "Vertical",
+      "kind": "instance",
+      "sourceNodeId": "4547:110769",
+      "notes": ["Vertical local navigation stack."]
+    }
+  ],
+  "docs": {
+    "sections": ["title", "description", "examples", "api", "variants"],
+    "useCases": ["section navigation", "settings subnav", "docs anchors"]
+  },
+  "validation": {
+    "typecheck": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "build": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "visualComparison": "not-run: Figma MCP token expired"
+  }
+}

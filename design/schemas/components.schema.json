@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blackstarzck.github.io/chanchan2/design/schemas/components.schema.json",
+  "title": "Design Handoff Components",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "figma",
+    "components"
+  ],
+  "properties": {
+    "figma": {
+      "$ref": "#/$defs/figmaContext"
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    }
+  },
+  "$defs": {
+    "figmaContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fileKey",
+        "releasePageId",
+        "releasePageName",
+        "exportedAt",
+        "sourcePlugin"
+      ],
+      "properties": {
+        "fileKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exportedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sourcePlugin": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "componentSlug",
+        "exportName",
+        "displayName",
+        "package",
+        "status",
+        "sourceType",
+        "figmaPageId",
+        "figmaPageName",
+        "figmaNodeId",
+        "docsRoute"
+      ],
+      "properties": {
+        "componentSlug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "exportName": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "package": {
+          "type": "string",
+          "pattern": "^@"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "planned",
+            "deprecated"
+          ]
+        },
+        "sourceType": {
+          "type": "string",
+          "enum": [
+            "COMPONENT",
+            "COMPONENT_SET",
+            "FRAME"
+          ]
+        },
+        "figmaPageId": {
+          "type": "string"
+        },
+        "figmaPageName": {
+          "type": "string"
+        },
+        "figmaNodeId": {
+          "type": "string"
+        },
+        "figmaNodeKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "figmaComponentSetId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "figmaComponentSetKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "docsRoute": {
+          "type": "string",
+          "pattern": "^/components/"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

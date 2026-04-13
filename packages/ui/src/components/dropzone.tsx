@@ -1,7 +1,7 @@
 import * as React from "react";
 import { UploadCloud } from "lucide-react";
 
-import { Button } from "./button";
+import { Button } from "./Button";
 import { cn } from "../lib/cn";
 
 export interface DropzoneProps

@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blackstarzck.github.io/chanchan2/design/schemas/tokens.schema.json",
+  "title": "Design Handoff Tokens",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "figma",
+    "fontSans",
+    "collections",
+    "colorMeta",
+    "radiusMeta",
+    "colors",
+    "radius"
+  ],
+  "properties": {
+    "figma": {
+      "$ref": "#/$defs/figmaContext"
+    },
+    "fontSans": {
+      "type": "string"
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/collection"
+      }
+    },
+    "colorMeta": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/tokenMeta"
+      }
+    },
+    "radiusMeta": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/tokenMeta"
+      }
+    },
+    "colors": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/stableKey"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/tokenValues"
+      }
+    },
+    "radius": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/stableKey"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/tokenValues"
+      }
+    }
+  },
+  "$defs": {
+    "stableKey": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[A-Z][a-z0-9]+)*$"
+    },
+    "themeName": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "figmaContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fileKey",
+        "releasePageId",
+        "releasePageName",
+        "exportedAt",
+        "sourcePlugin"
+      ],
+      "properties": {
+        "fileKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exportedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sourcePlugin": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "key",
+        "name",
+        "defaultModeId",
+        "modes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "defaultModeId": {
+          "type": "string"
+        },
+        "modes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "modeId",
+              "name"
+            ],
+            "properties": {
+              "modeId": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "tokenMeta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tokenKey",
+        "figmaVariableId",
+        "figmaVariableKey",
+        "figmaVariableName",
+        "type"
+      ],
+      "properties": {
+        "tokenKey": {
+          "$ref": "#/$defs/stableKey"
+        },
+        "figmaVariableId": {
+          "type": "string"
+        },
+        "figmaVariableKey": {
+          "type": "string"
+        },
+        "figmaVariableName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "color",
+            "radius",
+            "number",
+            "string"
+          ]
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "tokenValues": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/themeName"
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

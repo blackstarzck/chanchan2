@@ -1,0 +1,94 @@
+{
+  "componentName": "InputGroup",
+  "componentSlug": "input-group",
+  "figma": {
+    "fileKey": "7Nd8Ml5yOREhJjdCDKggf4",
+    "pageName": "Input Group [NEW]",
+    "mainNodeId": null,
+    "instanceNodeIds": [],
+    "frameExceptionNodeIds": ["5701:233673"],
+    "notes": [
+      "Figma MCP token was expired during this pass, so the local inventory is the source of record.",
+      "The local inventory lists the Input Group page but no extracted Main component or sample instances."
+    ]
+  },
+  "anatomy": {
+    "slots": ["label row", "leading addon", "field", "trailing addon", "message"],
+    "notes": [
+      "Input Group composes the Input shell pattern with fixed leading or trailing content.",
+      "Interactive children such as Checkbox or Button stay as examples, not root props."
+    ]
+  },
+  "props": [
+    {
+      "name": "variant",
+      "kind": "semantic",
+      "type": "'bordered' | 'gray' | 'underline'",
+      "required": false,
+      "default": "'bordered'",
+      "source": "Input [NEW] shell matrix",
+      "description": "Visual shell treatment shared with Input."
+    },
+    {
+      "name": "size",
+      "kind": "semantic",
+      "type": "'sm' | 'default' | 'lg'",
+      "required": false,
+      "default": "'default'",
+      "source": "Input [NEW] size matrix",
+      "description": "Group and field density shared with Input."
+    },
+    {
+      "name": "shape",
+      "kind": "semantic",
+      "type": "'rounded' | 'pill' | 'none'",
+      "required": false,
+      "default": "'rounded'",
+      "source": "Input [NEW] shape matrix",
+      "description": "Group shell radius shared with Input."
+    },
+    {
+      "name": "status",
+      "kind": "semantic",
+      "type": "'default' | 'invalid' | 'success'",
+      "required": false,
+      "default": "'default'",
+      "source": "Input [NEW] validation states",
+      "description": "Validation emphasis shared with Input."
+    },
+    {
+      "name": "side",
+      "kind": "composition",
+      "type": "'start' | 'end'",
+      "required": false,
+      "default": "'start'",
+      "source": "Addon placement",
+      "description": "Chooses the divider edge for an addon."
+    }
+  ],
+  "examples": [
+    {
+      "id": "addons",
+      "title": "Leading and trailing addons",
+      "kind": "composition",
+      "sourceNodeId": "5701:233673",
+      "notes": ["Shows static domain fragments as copyable docs code."]
+    },
+    {
+      "id": "validation",
+      "title": "Validation",
+      "kind": "composition",
+      "sourceNodeId": "5701:233673",
+      "notes": ["Shows status prop plus external message copy."]
+    }
+  ],
+  "docs": {
+    "sections": ["title", "description", "examples", "api", "variants"],
+    "useCases": ["domain inputs", "unit inputs", "field actions"]
+  },
+  "validation": {
+    "typecheck": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "build": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "visualComparison": "not-run: Figma MCP token expired"
+  }
+}

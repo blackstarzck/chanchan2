@@ -1,4 +1,10 @@
 node_modules
 dist
 .vite
+apps/docs/.visual-harness
+apps/docs/test-results
+apps/docs/playwright-report
 
+.vercel
+.env*.local
+.tmp-*

@@ -1,0 +1,128 @@
+{
+  "componentName": "SidebarNewPagesBatch",
+  "componentSlug": "sidebar-new-pages-batch",
+  "figma": {
+    "fileKey": "7Nd8Ml5yOREhJjdCDKggf4",
+    "source": "figma-component-pages-table.json plus validated Figma API token",
+    "pageName": "Current sidebar additions",
+    "mainNodeId": null,
+    "instanceNodeIds": [],
+    "frameExceptionNodeIds": [
+      "65883:5263",
+      "4149:12295",
+      "4159:14699",
+      "5129:119458"
+    ],
+    "notes": [
+      "This is a batch spec for pages added to the docs sidebar after the Figma page audit.",
+      "Already split components were excluded: Button, Card, Checkbox, Dialog, Input, Input Group, Navs, Select, and Tabs.",
+      "Toast was removed from package UI because the audited Figma file does not contain a dedicated Toast page.",
+      "Pages with zero main components were treated as asset or docs reference pages, not Radix primitives."
+    ]
+  },
+  "components": [
+    {
+      "slug": "button-icons",
+      "name": "Button Icons",
+      "pageId": "4165:12760",
+      "mainCount": 495,
+      "instanceCount": 59,
+      "runtimeExports": ["ButtonIcon", "ButtonIcons"],
+      "props": ["variant", "tone", "size", "label"],
+      "radixBase": "Slot optional asChild; otherwise native button props"
+    },
+    {
+      "slug": "chat-bubbles",
+      "name": "Chat Bubbles",
+      "pageId": "65883:5263",
+      "mainCount": 0,
+      "instanceCount": 0,
+      "runtimeExports": ["ChatThread", "ChatBubble", "ChatBubbles"],
+      "props": ["side", "tone", "meta"],
+      "radixBase": "presentational div props"
+    },
+    {
+      "slug": "devices",
+      "name": "Devices",
+      "pageId": "4338:50458",
+      "mainCount": 6,
+      "instanceCount": 8,
+      "runtimeExports": ["DeviceFrame", "DeviceScreen", "Devices"],
+      "props": ["device", "shadow"],
+      "radixBase": "presentational div props"
+    },
+    {
+      "slug": "lists",
+      "name": "Lists",
+      "pageId": "4340:50700",
+      "mainCount": 5,
+      "instanceCount": 99,
+      "runtimeExports": ["List", "ListItem", "Lists"],
+      "props": ["state", "asChild"],
+      "radixBase": "Slot optional asChild; otherwise native button props"
+    },
+    {
+      "slug": "styled-icons",
+      "name": "Styled Icons",
+      "pageId": "4319:45154",
+      "mainCount": 264,
+      "instanceCount": 58,
+      "runtimeExports": ["StyledIcon", "StyledIcons"],
+      "props": ["variant", "tone", "size", "shape"],
+      "radixBase": "presentational span props"
+    },
+    {
+      "slug": "tree-view",
+      "name": "Tree View",
+      "pageId": "155706:64046",
+      "mainCount": 1,
+      "instanceCount": 24,
+      "runtimeExports": ["TreeView", "TreeViewItem", "TreeViewGroup"],
+      "props": ["expanded", "selected", "level", "asChild"],
+      "radixBase": "Slot optional asChild; otherwise native button props"
+    },
+    {
+      "slug": "stepper",
+      "name": "Stepper",
+      "pageId": "5555:162616",
+      "mainCount": 23,
+      "instanceCount": 21,
+      "runtimeExports": ["Stepper", "StepperItem", "StepperIndicator"],
+      "props": ["orientation", "alignment", "state", "step"],
+      "radixBase": "presentational div props"
+    },
+    {
+      "slug": "charts",
+      "name": "Charts",
+      "pageIds": ["4398:73075", "4404:191548", "4384:68416", "4387:76806", "4390:73695"],
+      "runtimeExports": ["LineChart", "BarChart", "PieChart", "CirclesPieChart", "DoughnutChart", "HalfCircleChart"],
+      "props": ["data", "bars", "secondaryBars", "segments", "progress", "strong"],
+      "radixBase": "presentational SVG or div props"
+    },
+    {
+      "slug": "foundations",
+      "name": "Foundations and assets",
+      "pageIds": ["4149:12295", "4159:14699", "52586:133", "52695:160904", "4542:101036", "4190:19511", "5129:119458"],
+      "runtimeExports": ["ShadowPreview", "BlurPreview", "IconCollectionGrid", "IconTile", "CustomIcon", "IllustrationFrame", "Flag", "CreditList"],
+      "props": ["depth", "intensity", "label", "code", "href", "source"],
+      "radixBase": "presentational HTML props"
+    }
+  ],
+  "anatomy": {
+    "slots": ["root", "content", "label", "optional icon", "optional metadata"],
+    "notes": [
+      "Interactive rows use optional asChild to keep link/button ownership flexible.",
+      "Chart pages are represented with package-native SVG/CSS primitives instead of expiring Figma images.",
+      "Icon, flag, illustration, shadows, blur, and credits pages are treated as reusable display helpers."
+    ]
+  },
+  "docs": {
+    "sections": ["title", "description", "examples", "api", "variants"],
+    "useCases": ["docs sidebar page coverage", "package UI export coverage", "Figma page to package mapping"]
+  },
+  "validation": {
+    "typecheck": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "build": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "visualComparison": "not-run: implemented from inventory metadata and existing package visual language"
+  }
+}

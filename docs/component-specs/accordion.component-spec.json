@@ -1,0 +1,200 @@
+{
+  "componentName": "Accordion",
+  "componentSlug": "accordion",
+  "figma": {
+    "fileKey": "7Nd8Ml5yOREhJjdCDKggf4",
+    "pageName": "Accordion",
+    "pageNodeId": "4304:44741",
+    "mainNodeId": "4305:44881",
+    "instanceNodeIds": [
+      "5701:176905",
+      "5701:176906",
+      "5701:176908",
+      "5701:176920",
+      "5701:176921",
+      "5701:176924",
+      "5701:176912",
+      "5701:176913",
+      "5701:176916",
+      "5701:176937",
+      "5701:176938",
+      "5701:176941",
+      "64844:83900",
+      "64844:83901",
+      "64844:83904",
+      "5701:176945",
+      "5701:176947",
+      "5701:176950",
+      "64844:98262",
+      "64844:98263",
+      "64844:98266",
+      "64844:98267",
+      "64844:98268"
+    ],
+    "frameExceptionNodeIds": []
+  },
+  "anatomy": {
+    "slots": [
+      "leading toggle icon",
+      "leading icon",
+      "title placeholder",
+      "badge",
+      "trailing toggle icon",
+      "divider",
+      "content"
+    ],
+    "notes": [
+      "Figma main component exposes boolean properties for leading toggle, leading icon, badge, trailing toggle, placeholder, and divider.",
+      "Samples repeat plus/minus, chevron up/down, bordered, divider, stretched arrow, active content bordered, and nested structures.",
+      "Runtime stays Radix-based; design props are added on top of Radix primitive props."
+    ]
+  },
+  "props": [
+    {
+      "name": "indicatorPosition",
+      "kind": "semantic",
+      "type": "\"start\" | \"end\" | \"both\" | \"none\"",
+      "required": false,
+      "default": "start",
+      "source": "Leading Toggle Icon / Trailing Toggle Icon",
+      "description": "Controls whether the toggle icon appears before the title, after the title, both, or not at all."
+    },
+    {
+      "name": "indicatorVariant",
+      "kind": "semantic",
+      "type": "\"plus\" | \"chevron\" | \"circle\"",
+      "required": false,
+      "default": "plus",
+      "source": "Leading Toggle Icon Swap / Trailing Toggle Swap",
+      "description": "Maps repeated Figma icon swaps to a small public icon family."
+    },
+    {
+      "name": "density",
+      "kind": "semantic",
+      "type": "\"compact\" | \"comfortable\"",
+      "required": false,
+      "default": "comfortable",
+      "source": "Sample row heights 24px and 54-56px",
+      "description": "Controls trigger height and vertical rhythm."
+    },
+    {
+      "name": "leading",
+      "kind": "slot",
+      "type": "ReactNode",
+      "required": false,
+      "default": null,
+      "source": "Leading Icon",
+      "description": "Optional icon or visual before the title."
+    },
+    {
+      "name": "badge",
+      "kind": "slot",
+      "type": "ReactNode",
+      "required": false,
+      "default": null,
+      "source": "Badge",
+      "description": "Optional badge shown next to the title."
+    },
+    {
+      "name": "divider",
+      "kind": "semantic",
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "source": "Divider",
+      "description": "Controls whether each item renders its top divider."
+    },
+    {
+      "name": "variant",
+      "kind": "semantic",
+      "type": "\"plain\" | \"card\"",
+      "required": false,
+      "default": "plain",
+      "source": "Bordered samples",
+      "description": "Controls item surface treatment."
+    },
+    {
+      "name": "inset",
+      "kind": "semantic",
+      "type": "\"none\" | \"start\"",
+      "required": false,
+      "default": "start",
+      "source": "Content alignment",
+      "description": "Controls content alignment under the trigger."
+    },
+    {
+      "name": "content variant",
+      "kind": "semantic",
+      "type": "\"plain\" | \"bordered\"",
+      "required": false,
+      "default": "plain",
+      "source": "Active Content bordered",
+      "description": "Controls whether expanded content appears as a bordered panel."
+    }
+  ],
+  "examples": [
+    {
+      "id": "accordion-basic-usage",
+      "title": "Basic usage",
+      "kind": "instance-group",
+      "sourceNodeId": "5701:176902",
+      "notes": ["Compact rows, start indicator, no bordered shell."]
+    },
+    {
+      "id": "accordion-no-arrow",
+      "title": "No arrow",
+      "kind": "instance-group",
+      "sourceNodeId": "5701:176917",
+      "notes": ["Comfortable rows without toggle icons."]
+    },
+    {
+      "id": "accordion-bordered",
+      "title": "Bordered",
+      "kind": "instance-group",
+      "sourceNodeId": "5701:176909",
+      "notes": ["Card shell with dividers and active content."]
+    },
+    {
+      "id": "accordion-divider",
+      "title": "Divider",
+      "kind": "instance-group",
+      "sourceNodeId": "5701:176934",
+      "notes": ["Chevron indicator with visible item separators."]
+    },
+    {
+      "id": "accordion-stretched-arrow",
+      "title": "With title and arrow stretched",
+      "kind": "instance-group",
+      "sourceNodeId": "64844:61091",
+      "notes": ["End-positioned chevron stretches away from the title."]
+    },
+    {
+      "id": "accordion-active-content-bordered",
+      "title": "Active Content bordered",
+      "kind": "instance-group",
+      "sourceNodeId": "5701:176942",
+      "notes": ["Expanded body appears as a bordered card."]
+    },
+    {
+      "id": "accordion-nested",
+      "title": "Nested",
+      "kind": "instance-group",
+      "sourceNodeId": "64844:98259",
+      "notes": ["Nested accordion rows inside active content."]
+    }
+  ],
+  "docs": {
+    "sections": ["title", "description", "examples", "api", "variants"],
+    "useCases": [
+      "FAQ lists",
+      "Settings groups",
+      "Nested disclosure navigation",
+      "Bordered content panels"
+    ]
+  },
+  "validation": {
+    "typecheck": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "build": "passed: @blackstarzck/ui and @blackstarzck/docs",
+    "visualComparison": "sanity checked against Figma Accordion Examples content render; pixel-perfect comparison not performed"
+  }
+}

@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "tokens:sync": "npm run sync --workspace @blackstarzck/tokens",
+    "design:release": "node ./design/scripts/create-release.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "npm run build && changeset publish",

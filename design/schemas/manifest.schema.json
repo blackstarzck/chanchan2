@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blackstarzck.github.io/chanchan2/design/schemas/manifest.schema.json",
+  "title": "Design Release Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "designVersion",
+    "figmaFileKey",
+    "figmaLibraryVersion",
+    "releasePageId",
+    "releasePageName",
+    "exportedAt",
+    "sourcePlugin",
+    "baseVersion",
+    "changedTokens",
+    "changedThemes",
+    "changedComponents",
+    "changedSamples",
+    "approvedBy",
+    "packageVersions",
+    "createdAt",
+    "notes"
+  ],
+  "properties": {
+    "designVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "figmaFileKey": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "figmaLibraryVersion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "releasePageId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "releasePageName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exportedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "sourcePlugin": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "baseVersion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "changedTokens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "changedThemes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "changedComponents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "changedSamples": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approvedBy": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "packageVersions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tokens",
+        "ui"
+      ],
+      "properties": {
+        "tokens": {
+          "type": "string"
+        },
+        "ui": {
+          "type": "string"
+        }
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

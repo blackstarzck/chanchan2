@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blackstarzck.github.io/chanchan2/design/schemas/samples.schema.json",
+  "title": "Design Handoff Samples",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "figma",
+    "samples"
+  ],
+  "properties": {
+    "figma": {
+      "$ref": "#/$defs/figmaContext"
+    },
+    "samples": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sample"
+      }
+    }
+  },
+  "$defs": {
+    "figmaContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fileKey",
+        "releasePageId",
+        "releasePageName",
+        "exportedAt",
+        "sourcePlugin"
+      ],
+      "properties": {
+        "fileKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "releasePageName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exportedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "sourcePlugin": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sampleId",
+        "componentSlug",
+        "title",
+        "kind",
+        "status",
+        "sourceType",
+        "figmaPageId",
+        "figmaPageName",
+        "figmaNodeId"
+      ],
+      "properties": {
+        "sampleId": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "componentSlug": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "primitive",
+            "docs-sample",
+            "pattern"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "planned",
+            "deprecated"
+          ]
+        },
+        "sourceType": {
+          "type": "string",
+          "enum": [
+            "FRAME",
+            "COMPONENT",
+            "COMPONENT_SET",
+            "INSTANCE"
+          ]
+        },
+        "figmaPageId": {
+          "type": "string"
+        },
+        "figmaPageName": {
+          "type": "string"
+        },
+        "figmaNodeId": {
+          "type": "string"
+        },
+        "figmaNodeKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "docsVariationId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
