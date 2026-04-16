@@ -144,7 +144,7 @@ export function OverviewPage() {
 
       <section className="docs-catalog-coverage" aria-labelledby="catalog-coverage-title">
         <div className="docs-catalog-coverage-header">
-          <Typography.Title id="catalog-coverage-title" level={3} style={{ margin: 0 }}>
+          <Typography.Title id="catalog-coverage-title" level={3}>
             Catalog coverage
           </Typography.Title>
           <Tag color="blue">{componentCatalog.length} components indexed</Tag>
