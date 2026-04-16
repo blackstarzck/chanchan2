@@ -15,6 +15,10 @@
     "build": "npm run build --workspace @blackstarzck/tokens && npm run build --workspace @blackstarzck/ui && npm run build --workspace @blackstarzck/docs",
     "typecheck": "npm run typecheck --workspace @blackstarzck/tokens && npm run typecheck --workspace @blackstarzck/ui && npm run typecheck --workspace @blackstarzck/docs",
     "dev": "npm run dev --workspace @blackstarzck/docs",
+    "harness:turn": "py scripts/run_turn.py",
+    "harness:ack": "py scripts/ack_required_docs.py",
+    "harness:docs": "py scripts/rebuild_doc_library.py",
+    "harness:test": "py -m unittest discover -s tests -p test_harness_runtime.py",
     "clean": "npm run clean --workspace @blackstarzck/tokens && npm run clean --workspace @blackstarzck/ui && npm run clean --workspace @blackstarzck/docs"
   },
   "devDependencies": {

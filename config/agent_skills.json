@@ -1,0 +1,61 @@
+{
+  "roles": {
+    "planner": [
+      {
+        "skill_id": "requirement-analysis",
+        "name": "Requirement Analysis",
+        "purpose": "Analyze user intent, target paths, required docs, risks, and repeat patterns before execution."
+      },
+      {
+        "skill_id": "task-planning",
+        "name": "Task Planning",
+        "purpose": "Split the request into bounded steps with explicit handoffs."
+      }
+    ],
+    "implementer": [
+      {
+        "skill_id": "bounded-implementation",
+        "name": "Bounded Implementation",
+        "purpose": "Apply narrow changes through the tool gateway after required documents are acknowledged."
+      },
+      {
+        "skill_id": "constraint-application",
+        "name": "Constraint Application",
+        "purpose": "Use extracted document constraints while editing or running tools."
+      }
+    ],
+    "reviewer": [
+      {
+        "skill_id": "quality-review",
+        "name": "Quality Review",
+        "purpose": "Check changed files, validation output, missing scope, and consistency."
+      },
+      {
+        "skill_id": "browser-verification",
+        "name": "Browser Verification",
+        "purpose": "Use Playwright MCP for UI-impacting work and record validation.completed results."
+      },
+      {
+        "skill_id": "fallback-routing",
+        "name": "Fallback Routing",
+        "purpose": "Decide whether to complete, remind, fix immediately, or recommend a specialist fixer."
+      }
+    ],
+    "fixer": [
+      {
+        "skill_id": "targeted-remediation",
+        "name": "Targeted Remediation",
+        "purpose": "Repair validation failures and repeated findings without broad rewrites."
+      },
+      {
+        "skill_id": "regression-checking",
+        "name": "Regression Checking",
+        "purpose": "Rerun focused checks after remediation."
+      }
+    ]
+  },
+  "repeat_detection": {
+    "threshold": 2,
+    "skill_root": ".codex/skills"
+  }
+}

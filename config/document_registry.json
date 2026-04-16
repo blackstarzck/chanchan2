@@ -1,0 +1,116 @@
+{
+  "documents": [
+    {
+      "doc_id": "frontend-design-sync",
+      "path": "docs/FRONTEND-DESIGN-SYNC-GUIDE.md",
+      "summary": "Repository workflow for syncing approved Figma releases into tokens, UI components, and docs previews.",
+      "priority": 35,
+      "keywords": ["figma", "release", "design sync", "handoff", "frontend", "ui", "component", "token", "프론트", "디자인", "컴포넌트", "토큰"],
+      "intent_patterns": ["sync", "implement", "update", "fix", "refactor", "release", "publish", "구현", "수정", "동기화", "배포"],
+      "path_globs": ["design/handoff/**", "design/releases/**", "packages/ui/**", "packages/tokens/**", "apps/docs/**"],
+      "content_patterns": ["@blackstarzck/ui", "@blackstarzck/tokens", "ThemeRoot", "designTokens", "Figma"],
+      "labels": ["frontend", "design-sync", "release"],
+      "section_hints": ["Repository Roles", "Standard Frontend Flow", "Change Handling Rules"],
+      "toc": {
+        "max_chunk_lines": 90,
+        "max_heading_depth": 3
+      }
+    },
+    {
+      "doc_id": "ui-package",
+      "path": "packages/ui/README.md",
+      "summary": "Public package contract for the React UI primitives and compiled CSS.",
+      "priority": 30,
+      "keywords": ["ui", "component", "react", "@blackstarzck/ui", "accordion", "button", "컴포넌트"],
+      "intent_patterns": ["implement", "fix", "refactor", "add", "update", "구현", "수정", "추가", "리팩터"],
+      "path_globs": ["packages/ui/**"],
+      "content_patterns": ["React", "forwardRef", "className", "aria-", "@blackstarzck/ui/styles.css"],
+      "labels": ["frontend", "ui-package"],
+      "section_hints": ["Usage", "Notes"],
+      "toc": {
+        "max_chunk_lines": 80,
+        "max_heading_depth": 3
+      }
+    },
+    {
+      "doc_id": "token-package",
+      "path": "packages/tokens/README.md",
+      "summary": "Public package contract for semantic design tokens and theme helpers.",
+      "priority": 28,
+      "keywords": ["token", "theme", "@blackstarzck/tokens", "designTokens", "토큰", "테마"],
+      "intent_patterns": ["sync", "implement", "fix", "update", "release", "동기화", "구현", "수정"],
+      "path_globs": ["packages/tokens/**", "design/handoff/current/tokens.json", "design/handoff/current/themes.json"],
+      "content_patterns": ["designTokens", "themeNames", "getThemeTokens", "--"],
+      "labels": ["tokens", "design-sync"],
+      "section_hints": ["Usage", "Exports"],
+      "toc": {
+        "max_chunk_lines": 80,
+        "max_heading_depth": 3
+      }
+    },
+    {
+      "doc_id": "docs-visual-harness",
+      "path": "apps/docs/VISUAL-HARNESS.md",
+      "summary": "Visual verification workflow for docs app layout and component preview changes.",
+      "priority": 25,
+      "keywords": ["docs", "preview", "visual", "harness", "playwright", "screenshot", "화면", "검증"],
+      "intent_patterns": ["verify", "test", "fix", "update", "capture", "검증", "테스트", "수정"],
+      "path_globs": ["apps/docs/src/**", "apps/docs/public/**", "apps/docs/scripts/**", "apps/docs/playwright.config.*"],
+      "content_patterns": ["harness:capture", "Playwright", "screenshot", "React", "antd"],
+      "labels": ["docs-app", "visual-validation"],
+      "section_hints": ["Harness routes", "Capture command"],
+      "toc": {
+        "max_chunk_lines": 80,
+        "max_heading_depth": 3
+      }
+    },
+    {
+      "doc_id": "figma-component-extraction",
+      "path": "docs/FIGMA-COMPONENT-EXTRACTION-GUIDE.md",
+      "summary": "Rules for extracting Figma component pages without guessing hierarchy, variants, or styling.",
+      "priority": 24,
+      "keywords": ["figma", "component extraction", "main component", "instance", "screenshot", "Figma MCP"],
+      "intent_patterns": ["extract", "match", "implement", "compare", "rebuild", "추출", "구현", "비교"],
+      "path_globs": ["figma-*.md", "figma-*.json", "apps/docs/src/features/components/**", "packages/ui/src/components/**"],
+      "content_patterns": ["Main component", "instance", "get_design_context", "Figma"],
+      "labels": ["figma", "component-docs"],
+      "section_hints": ["Core Rules", "Workflow", "Extract the main component first"],
+      "toc": {
+        "max_chunk_lines": 100,
+        "max_heading_depth": 3
+      }
+    },
+    {
+      "doc_id": "harness-operations",
+      "path": "docs/harness/architecture.md",
+      "summary": "Generated harness architecture, event flow, document gate, role split, and safety boundaries.",
+      "priority": 22,
+      "keywords": ["harness", "agent", "document gate", "acknowledge", "session", "하네스", "문서"],
+      "intent_patterns": ["install", "update", "fix", "test", "run", "ack", "설치", "수정", "실행"],
+      "path_globs": ["generated_harness/**", "scripts/run_turn.py", "scripts/ack_required_docs.py", "scripts/rebuild_doc_library.py", "scripts/export_repeated_skill.py", "config/document_registry.json", "config/agent_skills.json", "docs/harness/**"],
+      "content_patterns": ["HarnessRuntime", "DocumentGate", "requirements.analyzed", "docs.acknowledged"],
+      "labels": ["harness"],
+      "section_hints": ["Boundary Map", "Requirement Analysis", "Tool Gateway", "Validation"],
+      "toc": {
+        "max_chunk_lines": 100,
+        "max_heading_depth": 3
+      }
+    },
+    {
+      "doc_id": "publishing-and-operations",
+      "path": "docs/PUBLISHING-AND-OPERATIONS.ko.md",
+      "summary": "Release, publishing, and operational checks for package and deployment work.",
+      "priority": 18,
+      "keywords": ["publish", "release", "npm", "version", "changeset", "배포", "릴리스", "게시"],
+      "intent_patterns": ["publish", "release", "deploy", "version", "배포", "릴리스", "올려"],
+      "path_globs": [".changeset/**", "package.json", "package-lock.json", "vercel.json", "packages/*/package.json", "apps/*/package.json"],
+      "content_patterns": ["changeset", "npm publish", "changeset publish", "npm run build"],
+      "labels": ["release", "operations"],
+      "section_hints": ["publish", "release", "operations"],
+      "toc": {
+        "max_chunk_lines": 100,
+        "max_heading_depth": 3
+      }
+    }
+  ]
+}

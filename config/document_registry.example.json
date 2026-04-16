@@ -1,0 +1,36 @@
+{
+  "documents": [
+    {
+      "doc_id": "backend-rules",
+      "path": "docs/guides/backend.md",
+      "summary": "Backend implementation rules covering API shape, validation, error handling, auth, and migrations.",
+      "priority": 20,
+      "keywords": ["backend", "server", "api", "route", "migration", "\ubc31\uc5d4\ub4dc", "\uc11c\ubc84"],
+      "intent_patterns": ["make", "create", "add", "implement", "fix", "refactor", "\ub9cc\ub4e4", "\ucd94\uac00", "\uad6c\ud604", "\uc218\uc815", "\ub9ac\ud329\ud130"],
+      "path_globs": ["src/backend/**", "src/api/**", "db/**"],
+      "content_patterns": ["import express", "FastAPI", "router\\.", "SELECT ", "INSERT "],
+      "labels": ["backend"],
+      "section_hints": ["error handling", "security", "validation"],
+      "toc": {
+        "max_chunk_lines": 120,
+        "max_heading_depth": 3
+      }
+    },
+    {
+      "doc_id": "frontend-rules",
+      "path": "docs/guides/frontend.md",
+      "summary": "Frontend implementation rules covering UI states, accessibility, data fetching, and interaction safety.",
+      "priority": 15,
+      "keywords": ["frontend", "ui", "react", "component", "screen", "\ud504\ub860\ud2b8", "\ud654\uba74", "\ucef4\ud3ec\ub10c\ud2b8"],
+      "intent_patterns": ["make", "create", "add", "implement", "fix", "refactor", "\ub9cc\ub4e4", "\ucd94\uac00", "\uad6c\ud604", "\uc218\uc815", "\ub9ac\ud329\ud130"],
+      "path_globs": ["src/frontend/**", "src/components/**", "src/app/**"],
+      "content_patterns": ["useState\\(", "useEffect\\(", "<button", "aria-", "fetch\\("],
+      "labels": ["frontend"],
+      "section_hints": ["accessibility", "loading and error states", "forms"],
+      "toc": {
+        "max_chunk_lines": 120,
+        "max_heading_depth": 3
+      }
+    }
+  ]
+}
