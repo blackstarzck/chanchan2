@@ -3,8 +3,10 @@ import {
   AppstoreOutlined,
   ArrowRightOutlined,
   BgColorsOutlined,
-  CheckCircleFilled,
+  CheckOutlined,
+  CopyOutlined,
   DeploymentUnitOutlined,
+  GithubOutlined,
   LayoutOutlined,
   ProfileOutlined
 } from "@ant-design/icons";
@@ -13,16 +15,14 @@ import {
   Card,
   Col,
   Divider,
-  List,
   Progress,
   Row,
   Space,
-  Statistic,
-  Steps,
   Tag,
   Typography,
   theme
 } from "antd";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { docsCatalogGroups } from "../catalog/docs-page-registry";
@@ -62,9 +62,6 @@ const docsRoutes = [
 export function OverviewPage() {
   const navigate = useNavigate();
   const { token } = theme.useToken();
-  const stableCount = componentCatalog.filter((component) => component.status === "stable").length;
-  const betaCount = componentCatalog.length - stableCount;
-  const docsEntryCount = docsCatalogGroups.reduce((count, group) => count + group.items.length, 0);
   const routeSummary = componentCategories.map((category) =>
     buildCategorySummary(
       category,
@@ -75,182 +72,89 @@ export function OverviewPage() {
 
   return (
     <div className="docs-page-shell">
-      <Row gutter={[24, 24]}>
-        <Col xs={24} xl={15}>
-          <Card
-            className="docs-overview-hero"
-            styles={{ body: { padding: 32 } }}
-            style={{
-              background: `linear-gradient(135deg, ${token.colorPrimaryBg} 0%, ${token.colorBgContainer} 58%, ${token.colorFillSecondary} 100%)`,
-              borderColor: token.colorBorderSecondary
-            }}
-          >
-            <Space direction="vertical" size={24} style={{ width: "100%" }}>
-              <Space wrap size={[8, 8]}>
-                <Tag color="blue">Docs IA refresh</Tag>
-                <Tag color="geekblue">Ant Design composition</Tag>
-                <Tag color={betaCount > 0 ? "gold" : "green"}>
-                  {betaCount > 0 ? `${betaCount} beta components` : "All stable"}
-                </Tag>
-              </Space>
-
-              <div>
-                <Typography.Title level={1} style={{ marginBottom: 12 }}>
-                  Chanchan2 docs redrawn around Ant Design components.
-                </Typography.Title>
-                <Typography.Paragraph
-                  type="secondary"
-                  style={{ fontSize: token.fontSizeLG, marginBottom: 0, maxWidth: 760 }}
-                >
-                  The landing experience now behaves like a documentation hub instead of a single
-                  hero canvas. Existing routes and catalog structure stay intact, but the first
-                  screen is reorganized with cards, metrics, and entry points that feel closer to
-                  Ant Design&apos;s information architecture.
+      <section>
+        <Row gutter={[16, 16]}>
+          <Col xs={24} lg={8}>
+            <Card
+              title={
+                <Space>
+                  <ApiOutlined />
+                  Install UI package
+                </Space>
+              }
+              className="docs-route-card"
+            >
+              <Space orientation="vertical" size={14} style={{ width: "100%" }}>
+                <Typography.Paragraph type="secondary" style={{ marginBottom: 0 }}>
+                  Use this package for visible React components such as buttons, cards, forms, and navigation.
                 </Typography.Paragraph>
-              </div>
-
-              <Space wrap size={[12, 12]}>
-                <Button type="primary" size="large" onClick={() => navigate("/components")}>
-                  Browse components
-                </Button>
-                <Button size="large" onClick={() => navigate("/foundations")}>
-                  Open foundations
-                </Button>
-                <Button type="link" size="large" onClick={() => navigate("/patterns")}>
-                  Review patterns
-                </Button>
+                <CommandBlock
+                  command="npm install @blackstarzck/ui @blackstarzck/tokens react react-dom"
+                  label="UI package npm install command"
+                />
               </Space>
-
-              <Row gutter={[16, 16]}>
-                <Col xs={12} md={6}>
-                  <Card size="small">
-                    <Statistic title="Indexed components" value={componentCatalog.length} />
-                  </Card>
-                </Col>
-                <Col xs={12} md={6}>
-                  <Card size="small">
-                    <Statistic title="Docs routes" value={docsEntryCount} />
-                  </Card>
-                </Col>
-                <Col xs={12} md={6}>
-                  <Card size="small">
-                    <Statistic title="Stable" value={stableCount} />
-                  </Card>
-                </Col>
-                <Col xs={12} md={6}>
-                  <Card size="small">
-                    <Statistic title="Grouped categories" value={componentCategories.length} />
-                  </Card>
-                </Col>
-              </Row>
-            </Space>
-          </Card>
-        </Col>
-
-        <Col xs={24} xl={9}>
-          <Space direction="vertical" size={24} style={{ width: "100%" }}>
-            <Card title="Current rollout" extra={<Tag color="processing">Step 1</Tag>}>
-              <Steps
-                current={1}
-                direction="vertical"
-                items={[
-                  {
-                    description:
-                      "The overview entry screen and the global docs shell were rebuilt with AntD primitives.",
-                    title: "Navigation shell"
-                  },
-                  {
-                    description:
-                      "Component counts, route density, and rollout status are visible on the first screen.",
-                    title: "Catalog visibility"
-                  },
-                  {
-                    description:
-                      "Detail pages and variation navigation continue to use the existing route structure.",
-                    title: "Detail routes"
-                  }
-                ]}
-                size="small"
-              />
             </Card>
+          </Col>
 
-            <Card title="What changed" extra={<Tag color="green">Ready for review</Tag>}>
-              <List
-                dataSource={[
-                  "The top-level shell now uses AntD Layout, Menu, Drawer, Segmented, and Switch components.",
-                  "The root overview route was reframed as a dashboard-style doc landing with Card, Statistic, Steps, and Progress.",
-                  "Existing docs theme tokens are now wired into ConfigProvider so AntD components follow the active docs theme."
-                ]}
-                renderItem={(item) => (
-                  <List.Item style={{ alignItems: "flex-start" }}>
-                    <Space align="start">
-                      <CheckCircleFilled style={{ color: token.colorSuccess }} />
-                      <Typography.Text>{item}</Typography.Text>
-                    </Space>
-                  </List.Item>
-                )}
-              />
+          <Col xs={24} lg={8}>
+            <Card
+              title={
+                <Space>
+                  <BgColorsOutlined />
+                  Install tokens package
+                </Space>
+              }
+              className="docs-route-card"
+            >
+              <Space orientation="vertical" size={14} style={{ width: "100%" }}>
+                <Typography.Paragraph type="secondary" style={{ marginBottom: 0 }}>
+                  Use this package for shared colors, radius values, theme names, and design-system metadata.
+                </Typography.Paragraph>
+                <CommandBlock command="npm install @blackstarzck/tokens" label="Tokens package npm install command" />
+              </Space>
             </Card>
-          </Space>
-        </Col>
-      </Row>
+          </Col>
 
-      <Divider />
+          <Col xs={24} lg={8}>
+            <Card
+              title={
+                <Space>
+                  <GithubOutlined />
+                  Git repository
+                </Space>
+              }
+              className="docs-route-card"
+            >
+              <Space orientation="vertical" size={14} style={{ width: "100%" }}>
+                <Typography.Paragraph type="secondary" style={{ marginBottom: 0 }}>
+                  Review the full source, package READMEs, and workspace history in the GitHub repository.
+                </Typography.Paragraph>
+                <Typography.Link href="https://github.com/blackstarzck/chanchan2.git" target="_blank">
+                  https://github.com/blackstarzck/chanchan2.git
+                </Typography.Link>
+                <CommandBlock
+                  command="git clone https://github.com/blackstarzck/chanchan2.git"
+                  label="Git clone command"
+                />
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+      </section>
 
-      <Space direction="vertical" size={16} style={{ width: "100%" }}>
-        <div>
-          <Typography.Title level={3} style={{ marginBottom: 8 }}>
-            Navigate the system
+      <section className="docs-catalog-coverage" aria-labelledby="catalog-coverage-title">
+        <div className="docs-catalog-coverage-header">
+          <Typography.Title id="catalog-coverage-title" level={3} style={{ margin: 0 }}>
+            Catalog coverage
           </Typography.Title>
-          <Typography.Paragraph type="secondary" style={{ marginBottom: 0 }}>
-            The documentation flow has been split back into functional areas. Each area includes a
-            direct entry action so the first page works as a real navigation surface.
-          </Typography.Paragraph>
+          <Tag color="blue">{componentCatalog.length} components indexed</Tag>
         </div>
 
         <Row gutter={[16, 16]}>
-          {docsRoutes.map((route) => (
-            <Col key={route.label} xs={24} md={12} xl={6}>
-              <Card
-                hoverable
-                className="docs-route-card"
-                actions={[
-                  <Button
-                    key={`${route.label}-open`}
-                    type="link"
-                    icon={<ArrowRightOutlined />}
-                    iconPosition="end"
-                    onClick={() => navigate(route.to)}
-                  >
-                    Open
-                  </Button>
-                ]}
-              >
-                <Space direction="vertical" size={14}>
-                  <Tag color="default" bordered={false} style={{ width: "fit-content" }}>
-                    {route.icon}
-                  </Tag>
-                  <Typography.Title level={4} style={{ margin: 0 }}>
-                    {route.label}
-                  </Typography.Title>
-                  <Typography.Paragraph type="secondary" style={{ marginBottom: 0 }}>
-                    {route.description}
-                  </Typography.Paragraph>
-                </Space>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Space>
-
-      <Divider />
-
-      <Card title="Catalog coverage" extra={<Tag color="blue">{componentCatalog.length} components indexed</Tag>}>
-        <Row gutter={[16, 16]}>
           {routeSummary.map((summary) => (
             <Col key={summary.category} xs={24} md={12} xl={8}>
-              <Card size="small" className="docs-category-card">
-                <Space direction="vertical" size={14} style={{ width: "100%" }}>
+              <Card className="docs-category-card" styles={{ body: { padding: 24 } }}>
+                <div className="docs-category-summary">
                   <Space align="baseline" style={{ justifyContent: "space-between", width: "100%" }}>
                     <Typography.Title level={5} style={{ margin: 0 }}>
                       {summary.category}
@@ -268,54 +172,66 @@ export function OverviewPage() {
                   <Typography.Paragraph type="secondary" style={{ marginBottom: 0 }}>
                     {summary.previewText}
                   </Typography.Paragraph>
-                </Space>
+                </div>
               </Card>
             </Col>
           ))}
         </Row>
-      </Card>
+      </section>
 
-      <Divider />
+      <section className="docs-blueprint" aria-labelledby="docs-blueprint-title">
+        <div className="docs-blueprint-header">
+          <Typography.Title id="docs-blueprint-title" level={3}>
+            Docs blueprint
+          </Typography.Title>
+          <Tag icon={<ProfileOutlined />}>Info architecture</Tag>
+        </div>
 
-      <Card title="Docs blueprint" extra={<Tag icon={<ProfileOutlined />}>Info architecture</Tag>}>
-        <Row gutter={[24, 24]}>
+        <Row gutter={[32, 32]}>
           <Col xs={24} lg={12}>
-            <List
-              dataSource={docsCatalogGroups}
-              renderItem={(group) => (
-                <List.Item>
-                  <List.Item.Meta
-                    avatar={<AppstoreOutlined style={{ color: token.colorPrimary }} />}
-                    title={
-                      <Space wrap size={[8, 8]}>
-                        <Typography.Text strong>{group.label}</Typography.Text>
-                        <Tag>{group.items.length}</Tag>
-                      </Space>
-                    }
-                    description={`${group.items.length} docs entries are mapped into the current navigation tree.`}
-                  />
-                </List.Item>
-              )}
-            />
-          </Col>
-
-          <Col xs={24} lg={12}>
-            <Card size="small" bordered={false} style={{ background: token.colorFillSecondary }}>
-              <Space direction="vertical" size={12}>
-                <Typography.Title level={5} style={{ margin: 0 }}>
-                  Why this layout
-                </Typography.Title>
-                <Typography.Paragraph style={{ marginBottom: 0 }}>
-                  The first screen should do more than introduce the brand. It should let people
-                  understand scope, status, and where to go next in one pass, so the overview now
-                  combines project framing, metrics, section entry points, and catalog density in a
-                  single layout.
-                </Typography.Paragraph>
-              </Space>
-            </Card>
+            <Space orientation="vertical" size={12} style={{ width: "100%" }}>
+              {docsCatalogGroups.map((group) => (
+                <div className="docs-blueprint-row" key={group.label}>
+                  <AppstoreOutlined style={{ color: token.colorPrimary }} />
+                  <div>
+                    <Space wrap size={[8, 8]}>
+                      <Typography.Text strong>{group.label}</Typography.Text>
+                      <Tag>{group.items.length}</Tag>
+                    </Space>
+                    <Typography.Paragraph type="secondary" style={{ marginBottom: 0 }}>
+                      {group.items.length} docs entries are mapped into the current navigation tree.
+                    </Typography.Paragraph>
+                  </div>
+                </div>
+              ))}
+            </Space>
           </Col>
         </Row>
-      </Card>
+      </section>
+    </div>
+  );
+}
+
+function CommandBlock({ command, label }: { command: string; label: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copyCommand = async () => {
+    await navigator.clipboard.writeText(command);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1600);
+  };
+
+  return (
+    <div className="docs-command-block">
+      <code>{command}</code>
+      <button
+        type="button"
+        className="docs-command-copy"
+        aria-label={`Copy ${label}`}
+        onClick={copyCommand}
+      >
+        {copied ? <CheckOutlined aria-hidden="true" /> : <CopyOutlined aria-hidden="true" />}
+      </button>
     </div>
   );
 }

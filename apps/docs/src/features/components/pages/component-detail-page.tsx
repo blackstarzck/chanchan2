@@ -209,7 +209,6 @@ export function ComponentDetailPage() {
   const packageVersionLabel = selectedRelease?.manifest.packageVersions?.ui ?? selectedVersion;
   const latestVersionLabel = latestReleaseSnapshot?.version ?? null;
   const componentLinksVersion = selectedVersion ?? latestReleaseSnapshot?.version ?? null;
-  const variantLabels = visibleVariations.map((variation) => variation.title);
 
   return (
     <div className="flex w-full flex-col">
@@ -288,31 +287,6 @@ export function ComponentDetailPage() {
             </div>
           </section>
 
-          <section className="border-b border-border px-4 py-6 sm:px-6" data-testid="component-overview">
-            <div className="grid gap-6 xl:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
-              <div className="space-y-2">
-                <h2 className="text-xl font-semibold tracking-tight">Overview</h2>
-                <p className="text-sm leading-6 text-muted-foreground">
-                  {doc.description ?? doc.summary}
-                </p>
-              </div>
-
-              {doc.whenToUse.length > 0 ? (
-                <div className="space-y-2">
-                  <h2 className="text-xl font-semibold tracking-tight">Use cases</h2>
-                  <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
-                    {doc.whenToUse.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground/40" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </div>
-          </section>
-
           {!releaseState?.componentAvailable ? (
             <section className="px-4 py-6 sm:px-6" data-testid="component-release-empty-state">
               <div className="rounded-[22px] border border-dashed border-border bg-muted/30 px-6 py-8">
@@ -343,14 +317,6 @@ export function ComponentDetailPage() {
 
           {releaseState?.componentAvailable && visibleVariations.length > 0 ? (
             <div>
-              <section className="border-b border-border px-4 py-6 sm:px-6" data-testid="component-examples-header">
-                <div className="space-y-2">
-                  <h2 className="text-2xl font-semibold tracking-tight">Examples</h2>
-                  <p className="text-sm text-muted-foreground">
-                    Each example keeps the rendered JSX and the copyable docs code separate, matching the AntD docs authoring model.
-                  </p>
-                </div>
-              </section>
               {visibleVariations.map((variation) => (
                 <section
                   key={variation.id}
@@ -475,39 +441,6 @@ export function ComponentDetailPage() {
             </section>
           ) : null}
 
-          {releaseState?.componentAvailable && (variantLabels.length > 0 || doc.accessibility.length > 0) ? (
-            <section className="border-t border-border px-4 py-8 sm:px-6" data-testid="component-variants-use-cases">
-              <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-                {variantLabels.length > 0 ? (
-                  <div className="space-y-2">
-                    <h2 className="text-2xl font-semibold tracking-tight">Variants</h2>
-                    <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
-                      {variantLabels.map((label) => (
-                        <li key={label} className="flex gap-2">
-                          <span className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground/40" />
-                          <span>{label}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-
-                {doc.accessibility.length > 0 ? (
-                  <div className="space-y-2">
-                    <h2 className="text-2xl font-semibold tracking-tight">Accessibility</h2>
-                    <ul className="space-y-2 text-sm leading-6 text-muted-foreground">
-                      {doc.accessibility.map((item) => (
-                        <li key={item} className="flex gap-2">
-                          <span className="mt-2 size-1.5 shrink-0 rounded-full bg-foreground/40" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-              </div>
-            </section>
-          ) : null}
         </main>
 
       </div>
@@ -728,6 +661,7 @@ function VariationPlayground({
               Code preview
             </AccordionTrigger>
             <AccordionContent
+              inset="none"
               className="[&>div]:pb-0"
               data-testid={`${id}-code-accordion-content`}
             >

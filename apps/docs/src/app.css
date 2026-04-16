@@ -47,6 +47,13 @@ body {
   gap: 14px;
   min-width: 0;
   flex: 1 1 280px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.docs-shell-brand:focus-visible {
+  outline: 2px solid var(--cc-ring);
+  outline-offset: 4px;
 }
 
 .docs-shell-eyebrow {
@@ -104,6 +111,115 @@ body {
 .docs-route-card,
 .docs-category-card {
   height: 100%;
+}
+
+.docs-catalog-coverage {
+  margin-top: 44px;
+  padding: 28px 0 8px;
+}
+
+.docs-catalog-coverage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.docs-category-summary {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.docs-blueprint {
+  margin-top: 44px;
+  padding: 28px 0 8px;
+}
+
+.docs-blueprint-header {
+  margin-bottom: 28px;
+}
+
+.docs-blueprint-note {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+}
+
+@media (max-width: 640px) {
+
+  .docs-catalog-coverage-header,
+  .docs-blueprint-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.docs-command-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  min-width: 0;
+  border: 1px solid var(--cc-border);
+  border-radius: 8px;
+  background: var(--cc-muted);
+  padding: 12px;
+  color: var(--cc-foreground);
+  font-family: "IBM Plex Mono", "SFMono-Regular", "Consolas", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.docs-command-block code {
+  min-width: 0;
+  flex: 1;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.docs-command-copy {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cc-muted-foreground);
+  cursor: pointer;
+}
+
+.docs-command-copy:hover {
+  background: var(--cc-secondary);
+  color: var(--cc-foreground);
+}
+
+.docs-command-copy:focus-visible {
+  outline: 2px solid var(--cc-ring);
+  outline-offset: 2px;
+}
+
+.docs-blueprint-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--cc-border);
+  padding: 12px 0;
+}
+
+.docs-blueprint-row:first-child {
+  padding-top: 0;
+}
+
+.docs-blueprint-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .docs-code-panel-shell {
@@ -259,6 +375,7 @@ body {
 }
 
 @media (min-width: 768px) {
+
   .docs-shell-header-inner,
   .docs-page-shell {
     width: min(1680px, calc(100% - 48px));

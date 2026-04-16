@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Button, Drawer, Grid, Layout, Space } from "antd";
 import { useEffect, useMemo, useState } from "react";
-import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const primaryNavigation = [
   { icon: <ReadOutlined />, label: "Overview", to: "/overview" },
@@ -39,7 +39,7 @@ export function DocsShell() {
     <Layout className="docs-app-layout">
       <Layout.Header className="docs-shell-header">
         <div className="docs-shell-header-inner">
-          <div className="docs-shell-brand">
+          <Link className="docs-shell-brand" to="/overview" aria-label="Go to overview">
             <img
               src="/horizontal-logo.png"
               alt="Chanchan2 UI"
@@ -47,7 +47,7 @@ export function DocsShell() {
               height={49}
               style={{ display: "block", height: "auto", width: "min(212px, 100%)" }}
             />
-          </div>
+          </Link>
 
           {isDesktop ? (
             <nav className="docs-shell-nav" aria-label="Primary">
