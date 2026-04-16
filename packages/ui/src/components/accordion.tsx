@@ -43,15 +43,19 @@ const triggerDensityClasses: Record<AccordionTriggerDensity, string> = {
   comfortable: "min-h-14 py-4"
 };
 
+const AccordionItemContext = React.createContext<AccordionItemVariant>("plain");
+
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   AccordionItemProps
 >(({ className, divider = true, variant = "plain", ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cn(itemVariantClasses[variant], divider && "border-t border-border", className)}
-    {...props}
-  />
+  <AccordionItemContext.Provider value={variant}>
+    <AccordionPrimitive.Item
+      ref={ref}
+      className={cn(itemVariantClasses[variant], divider && "border-t border-border", className)}
+      {...props}
+    />
+  </AccordionItemContext.Provider>
 ));
 
 AccordionItem.displayName = "AccordionItem";
@@ -70,39 +74,44 @@ const AccordionTrigger = React.forwardRef<
   leading,
   openIndicator,
   ...props
-}, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "group flex flex-1 items-center gap-5 text-left text-base font-semibold tracking-[0.08px] text-foreground transition-colors hover:text-primary data-[state=open]:text-primary",
-        triggerDensityClasses[density],
-        className
-      )}
-      {...props}
-    >
-      {(indicatorPosition === "start" || indicatorPosition === "both") ? (
-        <AccordionIndicator
-          indicator={indicator}
-          openIndicator={openIndicator}
-          variant={indicatorVariant}
-        />
-      ) : null}
-      <span className="flex min-w-0 flex-1 items-center gap-3">
-        {leading ? <span className="shrink-0 text-muted-foreground group-data-[state=open]:text-primary">{leading}</span> : null}
-        <span className="truncate">{children}</span>
-        {badge ? <span className="shrink-0">{badge}</span> : null}
-      </span>
-      {(indicatorPosition === "end" || indicatorPosition === "both") ? (
-        <AccordionIndicator
-          indicator={indicator}
-          openIndicator={openIndicator}
-          variant={indicatorVariant}
-        />
-      ) : null}
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
+}, ref) => {
+  const itemVariant = React.useContext(AccordionItemContext);
+
+  return (
+    <AccordionPrimitive.Header className="flex">
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        className={cn(
+          "group flex flex-1 items-center gap-5 text-left text-base font-semibold tracking-[0.08px] text-foreground transition-colors hover:text-primary data-[state=open]:text-primary",
+          triggerDensityClasses[density],
+          itemVariant === "card" && "px-5 data-[state=open]:min-h-[54px] data-[state=open]:py-[15px]",
+          className
+        )}
+        {...props}
+      >
+        {(indicatorPosition === "start" || indicatorPosition === "both") ? (
+          <AccordionIndicator
+            indicator={indicator}
+            openIndicator={openIndicator}
+            variant={indicatorVariant}
+          />
+        ) : null}
+        <span className="flex min-w-0 flex-1 items-center gap-3">
+          {leading ? <span className="shrink-0 text-muted-foreground group-data-[state=open]:text-primary">{leading}</span> : null}
+          <span className="truncate">{children}</span>
+          {badge ? <span className="shrink-0">{badge}</span> : null}
+        </span>
+        {(indicatorPosition === "end" || indicatorPosition === "both") ? (
+          <AccordionIndicator
+            indicator={indicator}
+            openIndicator={openIndicator}
+            variant={indicatorVariant}
+          />
+        ) : null}
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+});
 
 function AccordionIndicator({
   indicator,
@@ -160,8 +169,8 @@ const AccordionContent = React.forwardRef<
   >
     <div
       className={cn(
-        "pb-5 pt-0 leading-6 tracking-[0.08px]",
-        inset === "start" && "pl-9",
+        "pb-4 pt-0 font-medium leading-6 tracking-[0.08px]",
+        inset === "start" && "pl-14 pr-5",
         variant === "bordered" && "mt-0 rounded-xl border border-border bg-card px-5 py-4 shadow-sm"
       )}
     >

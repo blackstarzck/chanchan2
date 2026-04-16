@@ -378,7 +378,7 @@ export function AccordionBorderedPreview() {
         type="single"
         collapsible
         defaultValue="preline"
-        className="max-w-xl overflow-hidden rounded-2xl border border-border bg-card"
+        className="w-[475px] max-w-full overflow-hidden rounded-xl bg-card font-[Inter] ring-1 ring-inset ring-border"
       >
         <AccordionItem value="updates" variant="card" divider={false}>
           <AccordionTrigger indicatorPosition="start">

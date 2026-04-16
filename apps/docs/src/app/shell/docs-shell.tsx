@@ -41,11 +41,11 @@ export function DocsShell() {
         <div className="docs-shell-header-inner">
           <div className="docs-shell-brand">
             <img
-              src="/full-logo.png"
+              src="/horizontal-logo.png"
               alt="Chanchan2 UI"
-              width={95}
-              height={76}
-              style={{ display: "block", height: 76, width: 95 }}
+              width={212}
+              height={49}
+              style={{ display: "block", height: "auto", width: "min(212px, 100%)" }}
             />
           </div>
 

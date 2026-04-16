@@ -995,7 +995,7 @@ import { CircleMinus, CirclePlus, FolderOpen } from "lucide-react";`,
       id: "accordion-bordered",
       title: "Bordered",
       description: "The bordered sample uses a card shell, item dividers, and active content inside the same surface.",
-      controlSummary: "variant: card, divider: true",
+      controlSummary: "variant: card, divider: true, inset: start",
       code: createDemoCode({
         demoName: "AccordionBorderedDemo",
         imports: ["Accordion", "AccordionContent", "AccordionItem", "AccordionTrigger"],
@@ -1004,7 +1004,7 @@ import { CircleMinus, CirclePlus, FolderOpen } from "lucide-react";`,
   type="single"
   collapsible
   defaultValue="preline"
-  className="max-w-xl overflow-hidden rounded-2xl border border-border bg-card"
+  className="w-[475px] max-w-full overflow-hidden rounded-xl bg-card font-[Inter] ring-1 ring-inset ring-border"
 >
   <AccordionItem value="updates" variant="card" divider={false}>
     <AccordionTrigger indicatorPosition="start">
@@ -1222,7 +1222,8 @@ import { CircleMinus, CirclePlus, FolderOpen } from "lucide-react";`,
       { figmaNodeId: "4305:3 / 4305:4", figmaNodeName: "Leading Icon / Leading Icon Swap", reactProp: "leading", rule: "Optional visible leading visual becomes a ReactNode slot.", sourceKind: "slot", notes: "Used for folder or circular icon examples." },
       { figmaNodeId: "4305:6", figmaNodeName: "Badge", reactProp: "badge", rule: "Optional badge becomes a ReactNode slot.", sourceKind: "slot", notes: "Keeps Badge reusable instead of hardcoding a badge style in Accordion." },
       { figmaNodeId: "4305:9", figmaNodeName: "Divider", reactProp: "divider", rule: "Divider visibility becomes a boolean item prop.", sourceKind: "observed-instance", notes: "Avoids forcing border seams into every sample." },
-      { figmaNodeId: "5701:176912 / 5701:176913", figmaNodeName: "Bordered samples", reactProp: "variant", rule: "Repeated bordered surface becomes an item surface prop.", sourceKind: "observed-instance", notes: "The outer card shell is still composed with className at the docs example level." },
+      { figmaNodeId: "5701:176912 / 5701:176913", figmaNodeName: "Bordered samples", reactProp: "AccordionItem variant", rule: "Card items add the padded 20px trigger row and shared divider seams.", sourceKind: "observed-instance", notes: "The outer card shell uses an inset ring at the docs example level so the Figma stroke does not add layout height." },
+      { figmaNodeId: "5701:176914", figmaNodeName: "Bordered expanded content", reactProp: "AccordionContent inset", rule: "The open content body keeps the 56px leading inset from the trigger icon column.", sourceKind: "observed-instance", notes: "This must be package behavior; the docs wrapper cannot compensate for it." },
       { figmaNodeId: "5701:176948", figmaNodeName: "Active Content bordered", reactProp: "AccordionContent variant", rule: "Expanded panel treatment becomes a content variant.", sourceKind: "observed-instance", notes: "Kept on content because only the active body changes." }
     ]
   },

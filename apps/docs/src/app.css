@@ -159,9 +159,9 @@ body {
 }
 
 .docs-code-editor .cm-gutterElement {
-  min-width: 3.5rem;
+  min-width: 2rem;
   box-sizing: border-box;
-  padding: 0 0.875rem 0 0.5rem;
+  padding: 0 0.5rem 0 0;
   line-height: 1.625rem;
   text-align: right;
 }
@@ -174,7 +174,7 @@ body {
   color: color-mix(in srgb, var(--cc-foreground) 50%, transparent);
   font-family: "IBM Plex Mono", "SFMono-Regular", "Consolas", monospace;
   font-variant-numeric: tabular-nums;
-  padding: 0.75rem 6px 0.75rem 0;
+  padding: 0.75rem 0 0.75rem 0;
 }
 
 .docs-preview-splitter {

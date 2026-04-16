@@ -13,12 +13,11 @@ import type {
 } from "./component-doc-types";
 
 export function DemoSurface({ children }: { children: ReactNode }) {
-  const { activeTheme, themeStyle } = useDocsTheme();
+  const { activeTheme } = useDocsTheme();
 
   return (
     <ThemeRoot
       theme={activeTheme}
-      style={themeStyle}
       data-component-theme-scope=""
       data-component-theme={activeTheme}
       className="bg-background py-4"

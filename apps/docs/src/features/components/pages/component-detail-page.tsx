@@ -181,30 +181,12 @@ export function ComponentDetailPage() {
       }
     };
 
-    updateActiveVariation();
     scrollContainer.addEventListener("scroll", updateActiveVariation, { passive: true });
 
     return () => {
       scrollContainer.removeEventListener("scroll", updateActiveVariation);
     };
   }, [doc, visibleVariations]);
-
-  useEffect(() => {
-    if (!doc || !activeVariationId) return;
-
-    const nextHash = `#${activeVariationId}`;
-    if (location.hash === nextHash) return;
-
-    suppressNextHashScrollRef.current = true;
-    navigate(
-      {
-        pathname: location.pathname,
-        search: location.search,
-        hash: nextHash
-      },
-      { replace: true }
-    );
-  }, [activeVariationId, doc, location.hash, location.pathname, location.search, navigate]);
 
   if (!doc) {
     return (
@@ -245,8 +227,17 @@ export function ComponentDetailPage() {
 
               if (target) {
                 pendingHashScrollRef.current = null;
+                suppressNextHashScrollRef.current = true;
                 target.scrollIntoView({ behavior: "smooth", block: "start" });
                 setActiveVariationId(variationId);
+                navigate(
+                  {
+                    pathname: location.pathname,
+                    search: location.search,
+                    hash: variationId
+                  },
+                  { replace: true }
+                );
               }
             }}
           />
@@ -703,11 +694,7 @@ function VariationPlayground({
                   />
                   {mountNode
                     ? createPortal(
-                        <ThemeRoot
-                          theme={activeTheme}
-                          style={themeStyle}
-                          className={previewLayoutClassName}
-                        >
+                        <ThemeRoot theme={activeTheme} className={previewLayoutClassName}>
                           {preview}
                         </ThemeRoot>,
                         mountNode
@@ -728,7 +715,6 @@ function VariationPlayground({
         <Accordion
           type="single"
           collapsible
-          defaultValue={`${id}-source-code`}
           className="border-t border-border"
         >
           <AccordionItem
